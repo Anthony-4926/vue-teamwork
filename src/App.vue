@@ -1,31 +1,51 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <template v-if="isLogin">
+      <login />
+    </template>
+    <template v-else-if="role == 'teacher'">
+      <teacher />
+    </template>
+    <template v-else-if="role == 'admin'">
+      <admin />
+    </template>
   </div>
 </template>
-
+<script>
+import bus from "@/util/Bus";
+export default {
+  components: {
+    login: () => import("@/views/Login"),
+    teacher: () => import("@/views/teacher/Teacher"),
+    admin: () => import("@/views/admin/Admin")
+  },
+  data: () => ({
+    isLogin: true,
+    role: "teacher"
+  }),
+  // 注册监听
+  created() {
+    bus.$on(bus.isLogin, data => {
+      this.isLogin = data;
+    });
+    bus.$on(bus.role, data => {
+      this.role = data;
+    });
+  },
+  // 销毁前取消监听
+  beforeDestroy() {
+    bus.$off(bus.isLogin);
+  }
+};
+</script>
 <style>
+ul {
+  list-style: none;
+}
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  width: 100%;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+a {
+  text-decoration: none;
 }
 </style>
