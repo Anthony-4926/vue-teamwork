@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <template v-if="isLogin">
-      <login />
-    </template>
-    <template v-else-if="role == 'teacher'">
+    <template v-if="role == 'teacher'">
       <teacher />
     </template>
     <template v-else-if="role == 'admin'">
@@ -15,9 +12,8 @@
 import bus from "@/util/Bus";
 export default {
   components: {
-    login: () => import("@/views/Login"),
-    teacher: () => import("@/views/teacher/Teacher"),
-    admin: () => import("@/views/admin/Admin")
+    teacher: () => import("./views/teacher/Teacher"),
+    admin: () => import("./views/admin/Admin")
   },
   data: () => ({
     isLogin: true,

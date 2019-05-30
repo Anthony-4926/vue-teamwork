@@ -40,7 +40,7 @@
 
 <script>
 import bus from "@/util/Bus";
-import { listAllAssigments } from "@/api/Main";
+import { listAllAssigments } from "@/main/api/Main";
 export default {
   components: {
     detailButton: () => import("./DetailButton")

@@ -22,8 +22,8 @@
 import bus from "@/util/Bus";
 export default {
   components: {
-    teacherSidebar: () => import("@/views/teacher/TeacherSidebar"),
-    myAssigment: () => import("@/views/teacher/MyAssigment")
+    teacherSidebar: () => import("@/main/views/teacher/TeacherSidebar"),
+    myAssigment: () => import("@/main/views/teacher/MyAssigment")
   },
   data() {
     return {

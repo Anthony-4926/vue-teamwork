@@ -7,15 +7,15 @@ export default new Router({
   routes: [
     {
       path: "/myAssigment",
-      component: () => import("@/views/teacher/MyAssigment.vue")
+      component: () => import("./views/teacher/MyAssigment.vue")
     },
     {
       path: "/allAssigment",
-      component: () => import("@/views/teacher/AllAssigment.vue")
+      component: () => import("./views/teacher/AllAssigment.vue")
     },
     {
       path: "/fixMyInf",
-      component: () => import("@/views/teacher/FixMyInf.vue")
+      component: () => import("./views/teacher/FixMyInf.vue")
     }
   ]
 });

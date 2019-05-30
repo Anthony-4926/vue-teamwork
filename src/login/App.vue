@@ -1,5 +1,5 @@
 <template>
-  <div id="login_view">
+  <div id="app">
     <div class="cms_login_container">
       <div class="login_header">
         <div class="cms_login_text">欢迎登录</div>
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-// import { login } from "@/api/Main";
+import { login } from "./api/Login";
 import bus from "@/util/Bus";
 export default {
   data: () => ({
@@ -62,24 +62,19 @@ export default {
   },
   methods: {
     submit() {
-      // login(this.user);
+      login(this.user);
       bus.$emit(bus.isLogin, false);
       bus.$emit(bus.role, this.role);
       window.console.log(this.role);
+      this.$nextTick(() => {
+        this.user = { number: null, password: null };
+      });
     }
   }
 };
 </script>
 
 <style>
-body {
-  align-items: center;
-  justify-content: center;
-  background-image: url("http://pic2.cxtuku.com/00/08/33/b37139d1f0d6.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
 .login_header {
   display: flex;
   height: 100px;
