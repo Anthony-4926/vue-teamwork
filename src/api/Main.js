@@ -30,10 +30,27 @@ export function login(user) {
 }
 
 export function getAddresses(data) {
-  let headers = { authorization: sessionStorage.getItem("Authorization") };
+  let headers = {
+    authorization: sessionStorage.getItem("Authorization")
+  };
   axios
-    .get(`/users/${data.uid}/addresses`, { headers: headers })
+    .get(`/users/${data.uid}/addresses`, {
+      headers: headers
+    })
     .then(response => {
       bus.$emit(bus.addresses, response.data.addresses);
     });
+}
+export function listAllAssigments() {
+  let headers = { authorization: sessionStorage.getItem("Authorization") };
+  axios.get(`/test/test.json`, { headers: headers }).then(response => {
+    bus.$emit(bus.assigments, response.data.allAssiment);
+  });
+}
+
+export function getAssigmentDetail() {
+  let headers = { authorization: sessionStorage.getItem("Authorization") };
+  axios.get(`/test/test.json`, { headers: headers }).then(response => {
+    bus.$emit(bus.assigment, response.data.assigment);
+  });
 }

@@ -6,9 +6,9 @@
         <tr>
           <th>#</th>
           <th>开始时间</th>
+          <th>结束时间</th>
           <th>地点</th>
           <th>完成情况</th>
-          <th>回复截止时间</th>
           <th>回复</th>
         </tr>
       </thead>
@@ -17,16 +17,20 @@
           <td>{{ index + 1 }}</td>
           <!-- 开始时间 -->
           <td>{{ a.begintime }}</td>
+          <!-- 结束时间 -->
+          <td>{{ a.endtime }}</td>
           <!-- 地点 -->
           <td>{{ a.place }}</td>
           <!-- 完成情况 -->
           <td>{{ a.statement }}</td>
           <!-- 结束时间 -->
-          <td>{{ a.feedbackDeadline }}</td>
           <!-- 回复 -->
-          <td>{{ a.feedback }}</td>
+          <td v-if="a.overtime == 'true'" style="color:red;">
+            {{ a.feedback }}
+          </td>
+          <td v-else>{{ a.feedback }}</td>
           <td>
-            <button @click="removeItem(index)">详细</button>
+            <detailButton v-bind:assigment="a" />
           </td>
         </tr>
       </tbody>
@@ -35,42 +39,41 @@
 </template>
 
 <script>
+import bus from "@/util/Bus";
+import { listAllAssigments } from "@/api/Main";
 export default {
+  components: {
+    detailButton: () => import("./DetailButton")
+  },
   data() {
     return {
       myAssigments: [
         {
-          begintime: "2019年5月29日13:56:49",
-          feedbackDeadline: "2019年5月29日13:57:12",
-          place: "丹青909",
-          statement: "未完成",
-          feedback: "收到"
-        },
-        {
-          begintime: "2019年5月29日13:56:49",
-          feedbackDeadline: "2019年5月29日13:57:12",
-          place: "丹青909",
-          statement: "未完成",
-          feedback: "收到"
-        },
-        {
-          begintime: "2019年5月29日13:56:49",
-          feedbackDeadline: "2019年5月29日13:57:12",
-          place: "丹青909",
-          statement: "未完成",
-          feedback: "收到"
-        },
-        {
-          begintime: "2019年5月29日13:56:49",
-          feedbackDeadline: "2019年5月29日13:57:12",
-          place: "丹青909",
-          statement: "未完成",
-          feedback: "收到"
+          begintime: null,
+          endtime: null,
+          place: null,
+          statement: null,
+          feedback: null
         }
       ]
     };
   },
-  created() {}
+  created() {
+    window.console.log("created myassigment");
+    listAllAssigments();
+    bus.$on(bus.assigments, data => {
+      this.myAssigments = data;
+    });
+  },
+  beforeDestroy() {
+    bus.$off(bus.assigments);
+  },
+  methods: {
+    detail(index) {
+      window.console.log(index);
+      this.$router.push(`/assiment/${index}`);
+    }
+  }
 };
 </script>
 

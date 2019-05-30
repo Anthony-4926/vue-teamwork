@@ -8,6 +8,8 @@ export default new Vue({
     addresses: "addresses",
     isLogin: "isLogin",
     teacher_isFirst: "teacher_isFirst",
-    role: "role"
+    role: "role",
+    assigments: "assigments",
+    assigment: "assigment"
   })
 });
