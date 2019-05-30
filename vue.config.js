@@ -3,7 +3,7 @@ module.exports = {
   publicPath: "./",
   devServer: {
     // 设置默认端口
-    port: 8081,
+    port: 8080,
     host: "localhost",
     // 设置代理
     proxy: {

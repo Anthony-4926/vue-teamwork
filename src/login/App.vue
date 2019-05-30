@@ -3,17 +3,10 @@
     <div class="cms_login_container">
       <div class="login_header">
         <div class="cms_login_text">欢迎登录</div>
-        <div class="role">
-          <select v-model="role">
-            <option value="teacher" selected>教师</option>
-            <option value="admin">管理员</option>
-          </select>
-        </div>
       </div>
       <div class="cms_login_table">
         <form>
           <div class="divBox">
-            <!-- <span class="margin_right10">账号</span> -->
             <input
               type="text"
               placeholder="请输入账号"
@@ -21,7 +14,6 @@
             />
           </div>
           <div class="divBox">
-            <!-- <span class="margin_right10">密码</span> -->
             <input
               type="text"
               placeholder="请输入密码"
@@ -41,31 +33,13 @@
 
 <script>
 import { login } from "./api/Login";
-import bus from "@/util/Bus";
 export default {
   data: () => ({
-    user: { userName: null, password: null },
-    role: "teacher"
+    user: { userName: null, password: null }
   }),
-  created() {
-    bus.$on(bus.loginSuccess, data => {
-      if (data) {
-        bus.$emit(bus.isLogin, false);
-        bus.$emit(bus.role, this.role);
-        // this.$router.push("/example11/welcome");
-      }
-    });
-    window.console.log(this.role);
-  },
-  beforeDestroy() {
-    bus.$off(bus.loginSuccess);
-  },
   methods: {
     submit() {
-      login(this.user);
-      bus.$emit(bus.isLogin, false);
-      bus.$emit(bus.role, this.role);
-      window.console.log(this.role);
+      login();
       this.$nextTick(() => {
         this.user = { number: null, password: null };
       });

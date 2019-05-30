@@ -7,7 +7,8 @@ Vue.config.productionTip = false;
 
 let token = sessionStorage.getItem("token");
 if (token == null) {
-  // window.location.href = "./login.html";
+  window.console.log("main.js");
+  window.location.href = "./login.html";
 } else {
   let role = sessionStorage.getItem("role");
   if (role == "6983f953b49c88210cb9") {

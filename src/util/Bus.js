@@ -5,10 +5,8 @@ export default new Vue({
     user: "user",
     name: "name",
     loginSuccess: "loginSuccess",
-    addresses: "addresses",
-    isLogin: "isLogin",
     teacher_isFirst: "teacher_isFirst",
-    role: "role",
+    role: "teacher",
     assigments: "assigments",
     assigment: "assigment"
   })
