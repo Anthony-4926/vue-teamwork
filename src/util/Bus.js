@@ -4,10 +4,10 @@ export default new Vue({
     e: "execption",
     user: "user",
     name: "name",
-    loginSuccess: "loginSuccess",
-    teacher_isFirst: "teacher_isFirst",
-    role: "teacher",
     assigments: "assigments",
-    assigment: "assigment"
+    allAssigments: "allAssigments",
+    teacher: "teacher",
+    role: "teacher",
+    isTeacherAssigment: "true"
   })
 });

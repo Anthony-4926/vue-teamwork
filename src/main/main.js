@@ -7,15 +7,19 @@ Vue.config.productionTip = false;
 
 let token = sessionStorage.getItem("token");
 if (token == null) {
-  window.console.log("main.js");
   window.location.href = "./login.html";
 } else {
-  let role = sessionStorage.getItem("role");
-  if (role == "6983f953b49c88210cb9") {
-    setTimeout(() => {
-      bus.$emit(bus.isAdmin, true);
-    }, 1000);
+  let roleCode = sessionStorage.getItem("role");
+  let role = null;
+  if (roleCode == "15ade689eff335c") {
+    role = "teacher";
+  } else if (roleCode == "ff2587edaa6828bde3") {
+    role = "admin";
   }
+  setTimeout(() => {
+    bus.$emit(bus.role, role);
+  }, 1000);
+
   new Vue({
     router,
     render: h => h(App)

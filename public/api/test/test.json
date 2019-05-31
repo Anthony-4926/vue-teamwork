@@ -1,5 +1,5 @@
 {
-  "allAssiment": [{
+  "myAssigments": [{
       "course": "计算机",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
@@ -52,177 +52,52 @@
       "statement": "未完成",
       "feedback": "未回复",
       "overtime": "true"
-    },
-    {
-      "course": "操作系统",
+    }
+  ],
+  "allAssigments": [{
+      "course": "计算机1",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
       "place": "丹青909",
       "statement": "未完成",
-      "feedback": "未回复",
+      "feedback": "未回复11",
       "overtime": "true"
     },
     {
-      "course": "操作系统",
+      "course": "java程序设计1",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
       "place": "丹青909",
       "statement": "未完成",
-      "feedback": "未回复",
+      "feedback": "未回复11",
       "overtime": "true"
     },
     {
-      "course": "操作系统",
+      "course": "数据库1",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
       "place": "丹青909",
       "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
+      "feedback": "未回复11",
+      "overtime": "false"
     },
     {
-      "course": "操作系统",
+      "course": "算法1",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
       "place": "丹青909",
       "statement": "未完成",
-      "feedback": "未回复",
+      "feedback": "未回复11",
       "overtime": "true"
     },
     {
-      "course": "操作系统",
+      "course": "计算机组成",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
       "place": "丹青909",
       "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
+      "feedback": "未回复11",
+      "overtime": "false"
     },
     {
       "course": "操作系统",
@@ -246,5 +121,12 @@
   "user": {
     "token": 1,
     "role": "15ade689eff335c"
+
+  },
+  "teacher": {
+    "name": "赵鑫",
+    "title": "教授",
+    "intro": "基本要求：排序：按不同关键字，对所有的信息进行排序；查询：按特定条件查找学生；更新，按编号对某个学生的某项信息进行修改；插入，加入新生的信息；删除，按编号删除无管理要求学生的信息。基本要求：排序：按不同关键字，对所有的信息进行排序；查询：按特定条件查找学生；更新，按编号对某个学生的某项信息进行修改；插入，加入新生的信息；删除，按编号删除无管理要求学生的信息。",
+    "phoneNumber": "15765735124"
   }
 }

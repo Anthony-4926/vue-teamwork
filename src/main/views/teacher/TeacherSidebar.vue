@@ -1,29 +1,18 @@
 <template>
   <div>
     <ul>
-      <li @click="teacher_noFirst">
+      <li>
         <router-link to="/myAssigment">个人监考信息</router-link>
       </li>
-      <li @click="teacher_noFirst">
+      <li>
         <router-link to="/allAssigment">所有监考信息</router-link>
       </li>
-      <li @click="teacher_noFirst">
+      <li>
         <router-link to="/fixMyInf">修改信息</router-link>
       </li>
     </ul>
   </div>
 </template>
-
-<script>
-import bus from "@/util/Bus";
-export default {
-  methods: {
-    teacher_noFirst() {
-      bus.$emit(bus.teacher_isFirst, false);
-    }
-  }
-};
-</script>
 
 <style scoped>
 div {

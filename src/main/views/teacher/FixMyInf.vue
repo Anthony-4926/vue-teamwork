@@ -4,30 +4,30 @@
       <tr>
         <th>姓名</th>
         <td v-if="isChange">
-          <input type="text" v-model="teacher.name" />
+          <input type="text" v-model="user.name" />
         </td>
-        <td v-else>{{ teacher.name }}</td>
+        <td v-else>{{ user.name }}</td>
       </tr>
       <tr>
         <th>职称</th>
         <td v-if="isChange">
-          <input type="text" v-model="teacher.title" />
+          <input type="text" v-model="user.title" />
         </td>
-        <td v-else>{{ teacher.title }}</td>
+        <td v-else>{{ user.title }}</td>
       </tr>
       <tr>
         <th>手机号</th>
         <td v-if="isChange">
-          <input type="text" v-model="teacher.phoneNumber" />
+          <input type="text" v-model="user.phoneNumber" />
         </td>
-        <td v-else>{{ teacher.phoneNumber }}</td>
+        <td v-else>{{ user.phoneNumber }}</td>
       </tr>
       <tr>
         <th>简介</th>
         <td v-if="isChange">
-          <textarea v-model="teacher.intro" />
+          <textarea v-model="user.intro" />
         </td>
-        <td v-else>{{ teacher.intro }}</td>
+        <td v-else>{{ user.intro }}</td>
       </tr>
     </table>
 
@@ -41,16 +41,17 @@
 </template>
 
 <script>
-// import { threadId } from 'worker_threads';
+import { getUserInfor } from "@/main/api/Main";
+import { updateUserInfor } from "@/main/api/Main";
+import bus from "@/util/Bus";
 export default {
   data() {
     return {
-      teacher: {
-        name: "赵鑫",
-        title: "教授",
-        intro:
-          "hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha hhhah haha ",
-        phoneNumber: "15765735124"
+      user: {
+        name: null,
+        title: null,
+        intro: null,
+        phoneNumber: null
       },
       confirmDisable: true,
       isChange: false
@@ -64,7 +65,19 @@ export default {
     confirm() {
       this.isChange = false;
       this.confirmDisable = true;
+      updateUserInfor(this.user);
     }
+  },
+  created() {
+    console.log("fixMyInf");
+    getUserInfor();
+    // 需要把teacher改为user
+    bus.$on(bus.user, data => {
+      this.user = data;
+    });
+  },
+  destroyed() {
+    bus.$off(bus.user);
   }
 };
 </script>

@@ -15,7 +15,7 @@
           </div>
           <div class="divBox">
             <input
-              type="text"
+              type="password"
               placeholder="请输入密码"
               v-model="user.password"
             />
@@ -39,7 +39,7 @@ export default {
   }),
   methods: {
     submit() {
-      login();
+      login(this.user);
       this.$nextTick(() => {
         this.user = { number: null, password: null };
       });

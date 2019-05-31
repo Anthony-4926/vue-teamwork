@@ -5,13 +5,7 @@
     <!-- 工作空间 -->
     <div class="work_space">
       <div class="work_content">
-        <!-- 默认加载监考信息 -->
-        <template v-if="teacher_isFirst">
-          <myAssigment />
-        </template>
-        <template v-else>
-          <router-view v-bind:key="$route.path" />
-        </template>
+        <router-view v-bind:key="$route.path" />
       </div>
     </div>
     <!-- <alertdialog /> -->
@@ -19,30 +13,13 @@
 </template>
 
 <script>
-import bus from "@/util/Bus";
 export default {
   components: {
-    teacherSidebar: () => import("@/main/views/teacher/TeacherSidebar"),
-    myAssigment: () => import("@/main/views/teacher/MyAssigment")
-  },
-  data() {
-    return {
-      teacher_isFirst: true
-    };
+    teacherSidebar: () => import("@/main/views/teacher/TeacherSidebar")
   },
   // 注册监听
   created() {
-    bus.$on(bus.isLogin, data => {
-      this.isLogin = data;
-    }),
-      bus.$on(bus.teacher_isFirst, data => {
-        this.teacher_isFirst = data;
-      });
-  },
-  // 销毁前取消监听
-  beforeDestroy() {
-    bus.$off(bus.isLogin);
-    bus.$off(bus.teacher_isFirst);
+    this.$router.push("/myAssigment");
   }
 };
 </script>
