@@ -7,11 +7,7 @@
       <div class="cms_login_table">
         <form>
           <div class="divBox">
-            <input
-              type="text"
-              placeholder="请输入账号"
-              v-model="user.userName"
-            />
+            <input type="text" placeholder="请输入账号" v-model="user.number" />
           </div>
           <div class="divBox">
             <input
@@ -35,7 +31,7 @@
 import { login } from "./api/Login";
 export default {
   data: () => ({
-    user: { userName: null, password: null }
+    user: { number: null, password: null }
   }),
   methods: {
     submit() {
