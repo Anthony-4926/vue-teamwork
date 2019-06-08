@@ -1,5 +1,8 @@
 <template>
-  <assigments v-bind:assigments="this.allAssigments" />
+  <assigments
+    v-bind:assigments="this.allAssigments"
+    v-bind:teacherSelf="this.teacherSelf"
+  />
 </template>
 
 <script>
@@ -19,7 +22,8 @@ export default {
           statement: null,
           feedback: null
         }
-      ]
+      ],
+      teacherSelf: { teacherSelf: "false" }
     };
   },
   created() {

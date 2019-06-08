@@ -16,6 +16,10 @@ export default new Router({
     {
       path: "/fixMyInf",
       component: () => import("./views/teacher/FixMyInf.vue")
+    },
+    {
+      path: "/invigilations",
+      component: () => import("./views/admin/Invigilations.vue")
     }
   ]
 });

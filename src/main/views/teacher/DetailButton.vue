@@ -31,7 +31,12 @@
           </tr>
           <tr>
             <th>回复</th>
-            <td>{{ assigment.feedback }}</td>
+            <td>
+              <feedback
+                v-bind:assigment="assigment"
+                v-bind:teacherSelf="teacherSelf"
+              />
+            </td>
           </tr>
         </table>
       </div>
@@ -40,9 +45,11 @@
 </template>
 
 <script>
-// import { getAssigmentDetail } from "@/api/Main";
 export default {
-  props: ["assigment"],
+  props: ["assigment", "teacherSelf"],
+  components: {
+    feedback: () => import("./Feedback")
+  },
   data() {
     return {
       block: "none"

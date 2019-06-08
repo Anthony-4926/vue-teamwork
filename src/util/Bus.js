@@ -8,6 +8,8 @@ export default new Vue({
     allAssigments: "allAssigments",
     teacher: "teacher",
     role: "teacher",
-    isTeacherAssigment: "true"
+    teacherSelf: "false",
+    assigmentOvertime: "false",
+    allTeachers: "allTeachers"
   })
 });

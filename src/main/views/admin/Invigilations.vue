@@ -1,20 +1,20 @@
 <template>
   <div>
-    <!-- <h1>所有监考信息</h1> -->
     <table>
       <thead>
         <tr>
           <th>#</th>
+          <th>课程名称</th>
           <th>开始时间</th>
           <th>结束时间</th>
           <th>地点</th>
           <th>完成情况</th>
-          <th>回复</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(a, index) in assigments" :key="index">
+        <tr v-for="(a, index) in invigilations" :key="index">
           <td>{{ index + 1 }}</td>
+          <td>{{ a.course }}</td>
           <!-- 开始时间 -->
           <td>{{ a.begintime }}</td>
           <!-- 结束时间 -->
@@ -23,20 +23,8 @@
           <td>{{ a.place }}</td>
           <!-- 完成情况 -->
           <td>{{ a.statement }}</td>
-          <!-- 结束时间 -->
-          <!-- 回复 -->
-          <td
-            v-if="a.overtime == 'true' && teacherSelf.teacherSelf == 'true'"
-            style="color:red;"
-          >
-            {{ a.feedback }}
-          </td>
-          <td v-else>{{ a.feedback }}</td>
           <td>
-            <detailButton
-              v-bind:assigment="a"
-              v-bind:teacherSelf="teacherSelf"
-            />
+            <detailButton v-bind:assigment="a" />
           </td>
         </tr>
       </tbody>
@@ -45,10 +33,36 @@
 </template>
 
 <script>
+import bus from "@/util/Bus";
+import { listAllAssigments } from "@/main/api/Main";
 export default {
-  props: ["assigments", "teacherSelf"],
   components: {
-    detailButton: () => import("./DetailButton")
+    detailButton: () => import("./DetailButton.vue")
+  },
+  data() {
+    return {
+      invigilations: [
+        {
+          begintime: null,
+          endtime: null,
+          place: null,
+          statement: null,
+          feedback: null
+        }
+      ]
+    };
+  },
+  created() {
+    console.log("invigilations.vue");
+    listAllAssigments();
+    bus.$on(bus.allAssigments, data => {
+      this.invigilations = data;
+      console.log("invigilations.vue created");
+    });
+  },
+  beforeDestroy() {
+    console.log("invigilations.vue beforeDestroy");
+    bus.$off(bus.allAssigments);
   }
 };
 </script>

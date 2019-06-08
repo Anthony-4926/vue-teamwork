@@ -1,14 +1,16 @@
 {
-  "myAssigments": [{
+  "myInvigilations": [{
+      "id": "10",
       "course": "计算机",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
       "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
+      "statement": "id=1",
+      "feedback": "未回复，请在考试当天",
       "overtime": "true"
     },
     {
+      "id": "2",
       "course": "java程序设计",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
@@ -18,6 +20,7 @@
       "overtime": "true"
     },
     {
+      "id": "1",
       "course": "数据库",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
@@ -27,6 +30,7 @@
       "overtime": "false"
     },
     {
+      "id": "1",
       "course": "算法",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
@@ -36,6 +40,7 @@
       "overtime": "true"
     },
     {
+      "id": "1",
       "course": "计算机组成",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
@@ -45,6 +50,7 @@
       "overtime": "false"
     },
     {
+      "id": "1",
       "course": "操作系统",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
@@ -54,58 +60,46 @@
       "overtime": "true"
     }
   ],
-  "allAssigments": [{
+  "allInvigilations": [{
+      "id": "10",
       "course": "计算机1",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
       "place": "丹青909",
+      "teachers": [{
+          "id": "1",
+          "name": "赵鑫1",
+          "frequence": "1"
+        },
+        {
+          "id": "2",
+          "name": "赵鑫2",
+          "frequence": "2"
+        }
+      ],
       "statement": "未完成",
       "feedback": "未回复11",
       "overtime": "true"
     },
     {
-      "course": "java程序设计1",
+      "id": "10",
+      "course": "计算机1",
       "begintime": "2019年5月29日13:56:49",
       "endtime": "2019年5月29日13:57:12",
       "place": "丹青909",
-      "statement": "未完成",
+      "teachers": [{
+          "id": "3",
+          "name": "赵鑫1",
+          "frequence": "1"
+        },
+        {
+          "id": "4",
+          "name": "赵鑫4",
+          "frequence": "5"
+        }
+      ],
+      "statement": "已完成",
       "feedback": "未回复11",
-      "overtime": "true"
-    },
-    {
-      "course": "数据库1",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复11",
-      "overtime": "false"
-    },
-    {
-      "course": "算法1",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复11",
-      "overtime": "true"
-    },
-    {
-      "course": "计算机组成",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复11",
-      "overtime": "false"
-    },
-    {
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
       "overtime": "true"
     }
   ],
@@ -120,13 +114,33 @@
   },
   "user": {
     "token": 1,
-    "role": "15ade689eff335c"
-
+    "role": "ff2587edaa6828bde3"
   },
   "teacher": {
     "name": "赵鑫",
     "title": "教授",
     "intro": "基本要求：排序：按不同关键字，对所有的信息进行排序；查询：按特定条件查找学生；更新，按编号对某个学生的某项信息进行修改；插入，加入新生的信息；删除，按编号删除无管理要求学生的信息。基本要求：排序：按不同关键字，对所有的信息进行排序；查询：按特定条件查找学生；更新，按编号对某个学生的某项信息进行修改；插入，加入新生的信息；删除，按编号删除无管理要求学生的信息。",
     "phoneNumber": "15765735124"
-  }
+  },
+  "teachers": [{
+      "id": "3",
+      "name": "赵鑫1",
+      "frequence": "1"
+    },
+    {
+      "id": "2",
+      "name": "赵鑫2",
+      "frequence": "2"
+    },
+    {
+      "id": "1",
+      "name": "赵鑫3",
+      "frequence": "4"
+    },
+    {
+      "id": "4",
+      "name": "赵鑫4",
+      "frequence": "5"
+    }
+  ]
 }

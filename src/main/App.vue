@@ -3,7 +3,7 @@
     <template v-if="role == 'teacher'">
       <teacher />
     </template>
-    <template v-else-if="role == 'admin'">
+    <template v-else-if="role == 'admin' || 'superAdmin'">
       <admin />
     </template>
   </div>

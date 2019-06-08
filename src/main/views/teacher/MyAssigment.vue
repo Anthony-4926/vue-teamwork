@@ -1,5 +1,8 @@
 <template>
-  <assigments v-bind:assigments="this.myAssigments" />
+  <assigments
+    v-bind:assigments="this.myAssigments"
+    v-bind:teacherSelf="this.teacherSelf"
+  />
 </template>
 
 <script>
@@ -19,7 +22,8 @@ export default {
           statement: null,
           feedback: null
         }
-      ]
+      ],
+      teacherSelf: { teacherSelf: "true" }
     };
   },
   created() {
@@ -30,6 +34,9 @@ export default {
   },
   beforeDestroy() {
     bus.$off(bus.assigments);
+  },
+  beforeMount() {
+    bus.$emit(bus.teacherSelf, true);
   }
 };
 </script>
