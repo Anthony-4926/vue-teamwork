@@ -6,7 +6,11 @@
     <div id="bg" v-bind:style="{ display: block }">
       <div id="content" v-bind:style="{ display: block }">
         <div style="text-align:right; padding-right:5px;">
-          <i class="material-icons" @click="close">close</i>
+          <span
+            class="glyphicon glyphicon-remove"
+            aria-hidden="true"
+            @click="close"
+          ></span>
         </div>
         <table>
           <tr>
@@ -21,14 +25,14 @@
             <td v-if="isChange">
               <input type="datetime-local" v-model="assigment.begintime" />
             </td>
-            <td v-else>{{ assigment.begintime }}</td>
+            <td v-else>{{ formatDate(assigment.begintime) }}</td>
           </tr>
           <tr>
             <th>结束时间</th>
             <td v-if="isChange">
               <input type="datetime-local" v-model="assigment.endtime" />
             </td>
-            <td v-else>{{ assigment.endtime }}</td>
+            <td v-else>{{ formatDate(assigment.endtime) }}</td>
           </tr>
           <tr>
             <th>地点</th>
@@ -74,6 +78,7 @@
           </button>
         </div>
       </div>
+
       <div id="bar" v-if="addTeacher">
         <allteachers v-bind:assigment="assigment" />
       </div>
@@ -106,6 +111,8 @@ export default {
     },
     close() {
       this.block = "none";
+      this.addTeacher = false;
+      this.teacherButtonText = "修改教师";
     },
     change() {
       this.confirmDisable = false;
@@ -115,6 +122,7 @@ export default {
       this.isChange = false;
       this.confirmDisable = true;
       this.addTeacher = false;
+      this.teacherButtonText = "修改教师";
       updateInvigilation(this.assigment);
     },
     changeTeacher() {
@@ -129,6 +137,11 @@ export default {
   created() {
     this.teacherButtonText = "修改教师";
     this.changeable = this.assigment.statement == "已完成";
+  },
+  computed: {
+    formatDate() {
+      return date => date.replace("T", " ");
+    }
   }
 };
 </script>

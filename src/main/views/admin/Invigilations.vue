@@ -9,6 +9,9 @@
           <th>结束时间</th>
           <th>地点</th>
           <th>完成情况</th>
+          <th>
+            <addInvigilation />
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -16,9 +19,9 @@
           <td>{{ index + 1 }}</td>
           <td>{{ a.course }}</td>
           <!-- 开始时间 -->
-          <td>{{ a.begintime }}</td>
+          <td>{{ formatDate(a.begintime) }}</td>
           <!-- 结束时间 -->
-          <td>{{ a.endtime }}</td>
+          <td>{{ formatDate(a.endtime) }}</td>
           <!-- 地点 -->
           <td>{{ a.place }}</td>
           <!-- 完成情况 -->
@@ -35,9 +38,11 @@
 <script>
 import bus from "@/util/Bus";
 import { listAllAssigments } from "@/main/api/Main";
+
 export default {
   components: {
-    detailButton: () => import("./DetailButton.vue")
+    detailButton: () => import("./DetailButton.vue"),
+    addInvigilation: () => import("./AddInvigilation.vue")
   },
   data() {
     return {
@@ -63,6 +68,11 @@ export default {
   beforeDestroy() {
     console.log("invigilations.vue beforeDestroy");
     bus.$off(bus.allAssigments);
+  },
+  computed: {
+    formatDate() {
+      return date => date.replace("T", " ");
+    }
   }
 };
 </script>

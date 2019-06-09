@@ -5,7 +5,7 @@
         <router-link to="/invigilations">监考信息管理</router-link>
       </li>
       <li>
-        <router-link to="/all">教师管理</router-link>
+        <router-link to="/teacherMangage">教师管理</router-link>
       </li>
     </ul>
   </div>

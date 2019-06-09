@@ -20,6 +20,10 @@ export default new Router({
     {
       path: "/invigilations",
       component: () => import("./views/admin/Invigilations.vue")
+    },
+    {
+      path: "/teacherMangage",
+      component: () => import("./views/admin/TeacherMangage.vue")
     }
   ]
 });

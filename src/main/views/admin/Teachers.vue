@@ -1,22 +1,28 @@
 <template>
   <div>
     <table>
-      <tr>
-        <th>教师</th>
-        <th>监考次数</th>
-      </tr>
-      <tr v-for="(t, index) in allTeachers" :key="index">
-        <label>
-          <input
-            type="checkbox"
-            v-model="assigment.teachers"
-            :value="t"
-            :key="index"
-          />
-          <td>{{ t.name }}</td>
+      <thead>
+        <tr>
+          <th>教师</th>
+          <th>监考次数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(t, index) in allTeachers" :key="index">
+          <label>
+            <td>
+              <input
+                type="checkbox"
+                v-model="assigment.teachers"
+                :value="t"
+                :key="index"
+              />
+              {{ t.name }}
+            </td>
+          </label>
           <td>{{ t.frequence }}</td>
-        </label>
-      </tr>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -41,3 +47,22 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+div {
+  height: 80vh;
+  overflow: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  text-align: center;
+  padding: 8px;
+}
+/* tbody tr:nth-child(odd) {
+  background-color: #0000000e;
+} */
+</style>

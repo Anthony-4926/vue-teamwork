@@ -65,8 +65,33 @@ export function updateInvigilation(invigilation) {
   //   });
 }
 
+/**
+ * 获取所有教师
+ */
 export function listTeachers() {
   axios.get(`/test/test.json`).then(response => {
+    bus.$emit(bus.allTeachers, response.data.teachers);
+  });
+
+  // axios.get(`/teachers/listTeachers`).then(response => {
+  //   bus.$emit(bus.allTeachers, response.data.teachers);
+  // });
+}
+
+/**
+ * 基于id删除老师
+ * @param {老师id} tid
+ */
+export function deleteTeacher(tid) {
+  axios.post(`teachers/${tid}/delete`);
+}
+
+/**
+ * 添加老师
+ * @param {老师实体} teacher
+ */
+export function addTeacher(teacher) {
+  axios.post(`teachers/addTeacher`, teacher).then(response => {
     bus.$emit(bus.allTeachers, response.data.teachers);
   });
 }
