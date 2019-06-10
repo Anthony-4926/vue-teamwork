@@ -5,8 +5,14 @@ import bus from "@/util/Bus";
  * 获取教师信息
  */
 export function getUserInfor() {
-  axios.get("/test/test.json").then(response => {
-    bus.$emit(bus.user, response.data.teacher);
+  // axios.get("/test/test.json").then(response => {
+  //   bus.$emit(bus.user, response.data.teacher);
+  // });
+
+  axios.get("/teachers/getInfor").then(response => {
+    // console.log(response);
+
+    bus.$emit(bus.user, response.data.user);
   });
 }
 
@@ -15,7 +21,8 @@ export function getUserInfor() {
  * @param {*} user
  */
 export function updateUserInfor(user) {
-  axios.post(`teacher/update`, user).then(response => {
+  console.log(user);
+  axios.post(`teachers/update`, user).then(response => {
     setTimeout(() => {
       bus.$emit(bus.user, response.data.user);
     }, 1000);

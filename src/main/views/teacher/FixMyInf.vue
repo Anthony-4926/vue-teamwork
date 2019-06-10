@@ -1,42 +1,44 @@
 <template>
   <div>
-    <table>
-      <tr>
-        <th>姓名</th>
-        <td v-if="isChange">
-          <input type="text" v-model="user.name" />
-        </td>
-        <td v-else>{{ user.name }}</td>
-      </tr>
-      <tr>
-        <th>职称</th>
-        <td v-if="isChange">
-          <input type="text" v-model="user.title" />
-        </td>
-        <td v-else>{{ user.title }}</td>
-      </tr>
-      <tr>
-        <th>手机号</th>
-        <td v-if="isChange">
-          <input type="text" v-model="user.phoneNumber" />
-        </td>
-        <td v-else>{{ user.phoneNumber }}</td>
-      </tr>
-      <tr>
-        <th>简介</th>
-        <td v-if="isChange">
-          <textarea v-model="user.intro" />
-        </td>
-        <td v-else>{{ user.intro }}</td>
-      </tr>
-    </table>
+    <form>
+      <table>
+        <tr>
+          <th>姓名</th>
+          <td v-if="isChange">
+            <input type="text" v-model="user.name" />
+          </td>
+          <td v-else>{{ user.name }}</td>
+        </tr>
+        <tr>
+          <th>职称</th>
+          <td v-if="isChange">
+            <input type="text" v-model="user.title" />
+          </td>
+          <td v-else>{{ user.title }}</td>
+        </tr>
+        <tr>
+          <th>手机号</th>
+          <td v-if="isChange">
+            <input type="text" v-model="user.phoneNumber" />
+          </td>
+          <td v-else>{{ user.phoneNumber }}</td>
+        </tr>
+        <tr>
+          <th>简介</th>
+          <td v-if="isChange">
+            <textarea v-model="user.intro" />
+          </td>
+          <td v-else>{{ user.intro }}</td>
+        </tr>
+      </table>
 
-    <div class="button">
-      <button type="button" @click="change">修改</button>
-      <button type="button" v-bind:disabled="confirmDisable" @click="confirm">
-        确认
-      </button>
-    </div>
+      <div class="button">
+        <button type="button" @click="change">修改</button>
+        <button type="button" v-bind:disabled="confirmDisable" @click="confirm">
+          确认
+        </button>
+      </div>
+    </form>
   </div>
 </template>
 

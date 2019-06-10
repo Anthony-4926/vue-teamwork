@@ -19,9 +19,7 @@ if (token == null) {
   } else if (roleCode == "ljal45s35fs35f") {
     role = "superadmin";
   }
-  setTimeout(() => {
-    bus.$emit(bus.role, role);
-  }, 1000);
+  bus.$emit(bus.role, role);
 
   new Vue({
     router,

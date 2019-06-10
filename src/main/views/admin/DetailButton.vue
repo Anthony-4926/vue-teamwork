@@ -140,7 +140,7 @@ export default {
   },
   computed: {
     formatDate() {
-      return date => date.replace("T", " ");
+      return date => (date == null ? null : date.replace("T", " "));
     }
   }
 };
