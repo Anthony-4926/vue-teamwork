@@ -16,30 +16,30 @@
           <tr>
             <th>监考课程</th>
             <td v-if="isChange">
-              <input type="text" v-model="assigment.course" />
+              <input type="text" v-model="assigment.exam.name" />
             </td>
-            <td v-else>{{ assigment.course }}</td>
+            <td v-else>{{ assigment.exam.name }}</td>
           </tr>
           <tr>
             <th>开始时间</th>
             <td v-if="isChange">
-              <input type="datetime-local" v-model="assigment.begintime" />
+              <input type="datetime-local" v-model="assigment.exam.begintime" />
             </td>
-            <td v-else>{{ formatDate(assigment.begintime) }}</td>
+            <td v-else>{{ formatDate(assigment.exam.begintime) }}</td>
           </tr>
           <tr>
             <th>结束时间</th>
             <td v-if="isChange">
-              <input type="datetime-local" v-model="assigment.endtime" />
+              <input type="datetime-local" v-model="assigment.exam.overtime" />
             </td>
-            <td v-else>{{ formatDate(assigment.endtime) }}</td>
+            <td v-else>{{ formatDate(assigment.exam.overtime) }}</td>
           </tr>
           <tr>
             <th>地点</th>
             <td v-if="isChange">
-              <input type="text" v-model="assigment.place" />
+              <input type="text" v-model="assigment.exam.place" />
             </td>
-            <td v-else>{{ assigment.place }}</td>
+            <td v-else>{{ assigment.exam.place }}</td>
           </tr>
 
           <tr>
@@ -99,8 +99,7 @@ export default {
       confirmDisable: true,
       isChange: false,
       addTeacher: false,
-      teacher: null,
-      classroom: null,
+
       teacherButtonText: null,
       changeable: true
     };

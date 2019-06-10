@@ -61,60 +61,34 @@
     }
   ],
   "allInvigilations": [{
-      "id": "10",
-      "course": "计算机1",
+    "id": "10",
+    "exam": {
+      "name": "计算机1",
       "begintime": "2019-06-04 03:02",
-      "endtime": "2019-06-04 03:02",
-      "place": "丹青909",
-      "teachers": [{
-          "id": "1",
-          "name": "赵鑫3",
-          "frequence": "4",
-          "title": "教授",
-          "intro": "基本要求：排序：按不同关键字",
-          "phoneNumber": "15765735124"
-        },
-        {
-          "id": "4",
-          "name": "赵鑫4",
-          "frequence": "5",
-          "title": "教授",
-          "intro": "基本要求：排序：按不同关键字",
-          "phoneNumber": "15765735124"
-        }
-      ],
-      "statement": "未完成",
-      "feedback": "未回复11",
-      "overtime": "true"
+      "overtime": "2019-06-04 03:02",
+      "place": "丹青909"
     },
-    {
-      "id": "10",
-      "course": "计算机1",
-      "begintime": "2019-06-04 03:02",
-      "endtime": "2019-06-04 03:02",
-      "place": "丹青909",
-      "teachers": [{
-          "id": "3",
-          "name": "赵鑫1",
-          "frequence": "1",
-          "title": "教授",
-          "intro": "基本要求：排序：按不同关键字",
-          "phoneNumber": "15765735124"
-        },
-        {
-          "id": "2",
-          "name": "赵鑫2",
-          "frequence": "2",
-          "title": "教授",
-          "intro": "基本要求：排序：按不同关键字",
-          "phoneNumber": "15765735124"
-        }
-      ],
-      "statement": "已完成",
-      "feedback": "未回复11",
-      "overtime": "true"
-    }
-  ],
+    "teachers": [{
+        "id": "1",
+        "name": "赵鑫3",
+        "frequence": "4",
+        "title": "教授",
+        "intro": "基本要求：排序：按不同关键字",
+        "phoneNumber": "15765735124"
+      },
+      {
+        "id": "4",
+        "name": "赵鑫4",
+        "frequence": "5",
+        "title": "教授",
+        "intro": "基本要求：排序：按不同关键字",
+        "phoneNumber": "15765735124"
+      }
+    ],
+    "statement": "未完成",
+    "feedback": "未回复11",
+    "overtime": "true"
+  }],
   "assigment": {
     "course": "java程序设计",
     "begintime": "2019年5月29日13:56:49",
@@ -133,206 +107,5 @@
     "title": "教授",
     "intro": "基本要求：排序：按不同关键字，对所有的信息进行排序；查询：按特定条件查找学生；更新，按编号对某个学生的某项信息进行修改；插入，加入新生的信息；删除，按编号删除无管理要求学生的信息。基本要求：排序：按不同关键字，对所有的信息进行排序；查询：按特定条件查找学生；更新，按编号对某个学生的某项信息进行修改；插入，加入新生的信息；删除，按编号删除无管理要求学生的信息。",
     "phoneNumber": "15765735124"
-  },
-  "teachers": [{
-      "id": "3",
-      "name": "赵鑫1",
-      "frequence": "1",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "2",
-      "name": "赵鑫2",
-      "frequence": "2",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "1",
-      "name": "赵鑫3",
-      "frequence": "4",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    },
-    {
-      "id": "4",
-      "name": "赵鑫4",
-      "frequence": "5",
-      "title": "教授",
-      "intro": "基本要求：排序：按不同关键字",
-      "phoneNumber": "15765735124"
-    }
-  ]
+  }
 }

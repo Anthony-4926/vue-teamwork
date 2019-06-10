@@ -24,12 +24,16 @@
         </form>
       </div>
     </div>
+    <alertdialog />
   </div>
 </template>
 
 <script>
 import { login } from "./api/Login";
 export default {
+  components: {
+    alertdialog: () => import("@/components/AlertDialog")
+  },
   data: () => ({
     user: { number: null, password: null }
   }),

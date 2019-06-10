@@ -68,6 +68,7 @@
 <script>
 import { addTeacher } from "@/main/api/Main";
 export default {
+  props: ["allTeachers"],
   data() {
     return {
       block: "none",
@@ -76,7 +77,8 @@ export default {
         name: null,
         title: null,
         phoneNumber: null,
-        intro: null
+        intro: null,
+        authority: 1
       }
     };
   },
@@ -89,6 +91,7 @@ export default {
     },
     confirm() {
       addTeacher(this.teacher);
+      this.$set(this.allTeachers, this.allTeachers.length, this.teacher);
       this.block = "none";
     }
   }

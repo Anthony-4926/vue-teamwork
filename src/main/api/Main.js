@@ -88,8 +88,8 @@ export function listTeachers() {
  * 基于id删除老师
  * @param {老师id} tid
  */
-export function deleteTeacher(tid) {
-  axios.post(`teachers/${tid}/delete`);
+export function setAdmin(t) {
+  axios.post(`superAdmin/updateAuthority`, t);
 }
 
 /**
@@ -97,7 +97,5 @@ export function deleteTeacher(tid) {
  * @param {老师实体} teacher
  */
 export function addTeacher(teacher) {
-  axios.post(`admin/add`, teacher).then(response => {
-    bus.$emit(bus.allTeachers, response.data.teachers);
-  });
+  axios.post(`admin/add`, teacher);
 }

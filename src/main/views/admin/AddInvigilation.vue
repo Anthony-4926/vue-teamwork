@@ -25,25 +25,31 @@
           <tr>
             <th>课程名称</th>
             <td>
-              <input type="text" v-model="invigilation.course" />
+              <input type="text" v-model="invigilation.exam.neme" />
             </td>
           </tr>
           <tr>
             <th>开始时间</th>
             <td>
-              <input type="datetime-local" v-model="invigilation.startTime" />
+              <input
+                type="datetime-local"
+                v-model="invigilation.exam.startTime"
+              />
             </td>
           </tr>
           <tr>
             <th>结束时间</th>
             <td>
-              <input type="datetime-local" v-model="invigilation.endTime" />
+              <input
+                type="datetime-local"
+                v-model="invigilation.exam.overTime"
+              />
             </td>
           </tr>
           <tr>
             <th>教室</th>
             <td>
-              <input type="text" v-model="invigilation.classroom" />
+              <input type="text" v-model="invigilation.exam.classroom" />
             </td>
           </tr>
 
@@ -81,10 +87,7 @@ export default {
     return {
       block: "none",
       invigilation: {
-        course: null,
-        startTime: null,
-        endTime: null,
-        classroom: null,
+        exam: { name: null, startTime: null, overTime: null, classroom: null },
         teachers: []
       },
       addTeacher: false,

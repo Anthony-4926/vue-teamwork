@@ -16,7 +16,7 @@ if (token == null) {
     role = "teacher";
   } else if (roleCode == "ff2587edaa6828bde3") {
     role = "admin";
-  } else if (roleCode == "ljal45s35fs35f") {
+  } else if (roleCode == "2356afcd332d") {
     role = "superadmin";
   }
 

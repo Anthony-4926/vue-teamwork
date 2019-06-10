@@ -3,9 +3,10 @@
     <template v-if="role == 'teacher'">
       <teacher />
     </template>
-    <template v-else-if="role == 'admin' || 'superAdmin'">
+    <template v-else-if="role == 'admin' || role == 'superadmin'">
       <admin />
     </template>
+    <alertdialog />
   </div>
 </template>
 <script>
@@ -13,7 +14,8 @@ import bus from "@/util/Bus";
 export default {
   components: {
     teacher: () => import("./views/teacher/Teacher"),
-    admin: () => import("./views/admin/Admin")
+    admin: () => import("./views/admin/Admin"),
+    alertdialog: () => import("@/components/AlertDialog")
   },
   data: () => ({
     role: null

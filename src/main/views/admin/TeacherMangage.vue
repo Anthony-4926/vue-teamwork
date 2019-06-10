@@ -9,7 +9,7 @@
           <th>手机号</th>
           <th>简介</th>
           <th>
-            <addTeacher />
+            <addTeacher v-bind:allTeachers="allTeachers" />
           </th>
         </tr>
       </thead>
@@ -21,9 +21,15 @@
           <td>{{ t.title }}</td>
           <td>{{ t.phoneNumber }}</td>
           <td style="width:30%">{{ t.intro }}</td>
-
           <td>
-            <button @click="removeTeacher(index, t.id)">删除</button>
+            <div v-if="role == '2356afcd332d'">
+              <button @click="manageAdmin(t)" v-if="t.authority == 1">
+                设为管理员
+              </button>
+              <button @click="manageAdmin(t)" v-if="t.authority == 2">
+                取消管理员
+              </button>
+            </div>
           </td>
         </tr>
       </tbody>
@@ -34,7 +40,7 @@
 <script>
 import bus from "@/util/Bus";
 import { listTeachers } from "@/main/api/Main";
-// import { deleteTeacher } from "@/main/api/Main";
+import { setAdmin } from "@/main/api/Main";
 export default {
   components: {
     addTeacher: () => import("./AddTeacher.vue")
@@ -42,7 +48,8 @@ export default {
   },
   data() {
     return {
-      allTeachers: null
+      allTeachers: null,
+      role: null
     };
   },
   created() {
@@ -50,15 +57,16 @@ export default {
     bus.$on(bus.allTeachers, data => {
       this.allTeachers = data;
     });
+    this.role = sessionStorage.getItem("role");
+    console.log(this.role);
   },
   beforeDestroy() {
     bus.$off(bus.teachers);
   },
   methods: {
-    removeTeacher(index, tid) {
-      this.$delete(this.allTeachers, index);
-      console.log(tid);
-      //   deleteTeacher(tid);
+    manageAdmin(t) {
+      setAdmin(t);
+      t.authority = t.authority == 1 ? 2 : 1;
     }
   }
 };
