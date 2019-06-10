@@ -44,7 +44,8 @@ export function listAllAssigments() {
 export function listMyAssigments() {
   // let headers = { authorization: sessionStorage.getItem("Authorization") };
   axios.get(`/teachers/personal/invigilations`).then(response => {
-    bus.$emit(bus.assigments, response.data.personalInvigilations);
+    bus.$emit(bus.allAssigments, response.data.personalInvigilations);
+    console.log(response.data.personalInvigilations);
   });
 }
 
