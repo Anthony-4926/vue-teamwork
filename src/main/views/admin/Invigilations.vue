@@ -48,11 +48,13 @@ export default {
     return {
       invigilations: [
         {
-          begintime: null,
-          endtime: null,
-          place: null,
-          statement: null,
-          feedback: null
+          exam: {
+            name: null,
+            startTime: null,
+            overTime: null,
+            classroom: null
+          },
+          teachers: []
         }
       ]
     };

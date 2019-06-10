@@ -25,7 +25,7 @@
           <tr>
             <th>课程名称</th>
             <td>
-              <input type="text" v-model="invigilation.exam.neme" />
+              <input type="text" v-model="invigilation.exam.name" />
             </td>
           </tr>
           <tr>
@@ -103,7 +103,16 @@ export default {
       this.block = "none";
     },
     confirm() {
+      this.invigilation.exam.startTime = this.invigilation.exam.startTime.replace(
+        "T",
+        " "
+      );
+      this.invigilation.exam.overTime = this.invigilation.exam.overTime.replace(
+        "T",
+        " "
+      );
       addInvigilation(this.invigilation);
+      console.log(this.invigilation);
       this.block = "none";
     },
     changeTeacher() {
