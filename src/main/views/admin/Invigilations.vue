@@ -19,13 +19,13 @@
           <td>{{ index + 1 }}</td>
           <td>{{ a.exam.name }}</td>
           <!-- 开始时间 -->
-          <td>{{ formatDate(a.exam.begintime) }}</td>
+          <td>{{ formatDate(a.exam.startTime) }}</td>
           <!-- 结束时间 -->
-          <td>{{ formatDate(a.exam.overtime) }}</td>
+          <td>{{ formatDate(a.exam.overTime) }}</td>
           <!-- 地点 -->
-          <td>{{ a.exam.place }}</td>
+          <td>{{ a.exam.classroom }}</td>
           <!-- 完成情况 -->
-          <td>{{ a.statement }}</td>
+          <td>{{ a.invigilation.state }}</td>
           <td>
             <detailButton v-bind:assigment="a" />
           </td>
@@ -54,7 +54,12 @@ export default {
             overTime: null,
             classroom: null
           },
-          teachers: []
+          teachers: [],
+          invigilation: {
+            state: null,
+            isOverTime: null,
+            feedBackMessage: null
+          }
         }
       ]
     };

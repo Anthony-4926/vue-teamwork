@@ -23,23 +23,23 @@
           <tr>
             <th>开始时间</th>
             <td v-if="isChange">
-              <input type="datetime-local" v-model="assigment.exam.begintime" />
+              <input type="datetime-local" v-model="assigment.exam.startTime" />
             </td>
-            <td v-else>{{ formatDate(assigment.exam.begintime) }}</td>
+            <td v-else>{{ formatDate(assigment.exam.startTime) }}</td>
           </tr>
           <tr>
             <th>结束时间</th>
             <td v-if="isChange">
-              <input type="datetime-local" v-model="assigment.exam.overtime" />
+              <input type="datetime-local" v-model="assigment.exam.overTime" />
             </td>
-            <td v-else>{{ formatDate(assigment.exam.overtime) }}</td>
+            <td v-else>{{ formatDate(assigment.exam.overTime) }}</td>
           </tr>
           <tr>
             <th>地点</th>
             <td v-if="isChange">
-              <input type="text" v-model="assigment.exam.place" />
+              <input type="text" v-model="assigment.exam.classroom" />
             </td>
-            <td v-else>{{ assigment.exam.place }}</td>
+            <td v-else>{{ assigment.exam.exam.classroom }}</td>
           </tr>
 
           <tr>
@@ -61,7 +61,7 @@
 
           <tr>
             <th>完成情况</th>
-            <td>{{ assigment.statement }}</td>
+            <td>{{ assigment.invigilation.state }}</td>
           </tr>
         </table>
 

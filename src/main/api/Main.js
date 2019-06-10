@@ -34,6 +34,7 @@ export function updateUserInfor(user) {
 export function listAllAssigments() {
   axios.get(`/teachers/invigilations`).then(response => {
     bus.$emit(bus.allAssigments, response.data.invigilations);
+    console.log(response.data.invigilations);
   });
 }
 
