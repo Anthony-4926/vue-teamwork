@@ -16,13 +16,13 @@
         <tr v-for="(a, index) in assigments" :key="index">
           <td>{{ index + 1 }}</td>
           <!-- 开始时间 -->
-          <td>{{ a.begintime }}</td>
+          <td>{{ a.exam.startTime }}</td>
           <!-- 结束时间 -->
-          <td>{{ a.endtime }}</td>
+          <td>{{ a.exam.endTime }}</td>
           <!-- 地点 -->
-          <td>{{ a.place }}</td>
+          <td>{{ a.exam.classroom }}</td>
           <!-- 完成情况 -->
-          <td>{{ a.statement }}</td>
+          <td>{{ a.invigilation.state }}</td>
           <!-- 结束时间 -->
           <!-- 回复 -->
           <td

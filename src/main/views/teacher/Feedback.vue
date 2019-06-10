@@ -5,10 +5,10 @@
       <!-- 没有点击回复按钮时 -->
       <template v-if="this.feedbackButtonText == '回复'">
         <template v-if="assigment.overtime == 'true'">
-          <span style="color:red;">{{ assigment.feedback }}</span>
+          <span style="color:red;">{{ assigment.invigilation.feedback }}</span>
         </template>
         <!-- 点了回复按钮 -->
-        <template v-else>{{ assigment.feedback }}</template>
+        <template v-else>{{ assigment.invigilation.feedback }}</template>
       </template>
       <template v-else>
         <input

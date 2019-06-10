@@ -11,23 +11,23 @@
         <table>
           <tr>
             <th>监考课程</th>
-            <td>{{ assigment.course }}</td>
+            <td>{{ assigment.exam.name }}</td>
           </tr>
           <tr>
             <th>开始时间</th>
-            <td>{{ assigment.begintime }}</td>
+            <td>{{ assigment.exam.startTime }}</td>
           </tr>
           <tr>
             <th>结束时间</th>
-            <td>{{ assigment.endtime }}</td>
+            <td>{{ assigment.exam.endTime }}</td>
           </tr>
           <tr>
             <th>地点</th>
-            <td>{{ assigment.place }}</td>
+            <td>{{ assigment.invigilation.classroom }}</td>
           </tr>
           <tr>
             <th>完成情况</th>
-            <td>{{ assigment.statement }}</td>
+            <td>{{ assigment.invigilation.state }}</td>
           </tr>
           <tr>
             <th>回复</th>
