@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import { addTeacher } from "@/main/api/Main";
+import { addInvigilation } from "@/main/api/Main";
 export default {
   components: {
     allteachers: () => import("./Teachers.vue")
@@ -103,7 +103,7 @@ export default {
       this.block = "none";
     },
     confirm() {
-      addTeacher(this.teacher);
+      addInvigilation(this.invigilation);
       this.block = "none";
     },
     changeTeacher() {

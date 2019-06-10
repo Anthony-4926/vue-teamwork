@@ -99,3 +99,11 @@ export function setAdmin(t) {
 export function addTeacher(teacher) {
   axios.post(`admin/add`, teacher);
 }
+
+/**
+ * 添加监考
+ * @param {监考} invigilation
+ */
+export function addInvigilation(invigilation) {
+  axios.post(`admin/add/invigilation`, invigilation);
+}
