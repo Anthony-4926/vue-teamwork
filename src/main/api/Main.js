@@ -32,9 +32,8 @@ export function updateUserInfor(user) {
  * 获取所有监考任务
  */
 export function listAllAssigments() {
-  // let headers = { authorization: sessionStorage.getItem("Authorization") };
-  axios.get(`/test/test.json`).then(response => {
-    bus.$emit(bus.allAssigments, response.data.allInvigilations);
+  axios.get(`/teachers/invigilations`).then(response => {
+    bus.$emit(bus.allAssigments, response.data.invigilations);
   });
 }
 
