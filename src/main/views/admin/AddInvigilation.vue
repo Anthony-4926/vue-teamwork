@@ -80,6 +80,7 @@
 <script>
 import { addInvigilation } from "@/main/api/Main";
 export default {
+  props: ["invigilations"],
   components: {
     allteachers: () => import("./Teachers.vue")
   },
@@ -110,6 +111,11 @@ export default {
       this.invigilation.exam.overTime = this.invigilation.exam.overTime.replace(
         "T",
         " "
+      );
+      this.$set(
+        this.invigilations,
+        this.invigilations.length,
+        this.invigilation
       );
       addInvigilation(this.invigilation);
       console.log(this.invigilation);

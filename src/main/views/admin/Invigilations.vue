@@ -10,7 +10,7 @@
           <th>地点</th>
           <th>完成情况</th>
           <th>
-            <addInvigilation />
+            <addInvigilation v-bind:invigilations="invigilations" />
           </th>
         </tr>
       </thead>

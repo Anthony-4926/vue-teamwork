@@ -39,7 +39,7 @@
             <td v-if="isChange">
               <input type="text" v-model="assigment.exam.classroom" />
             </td>
-            <td v-else>{{ assigment.exam.exam.classroom }}</td>
+            <td v-else>{{ assigment.exam.classroom }}</td>
           </tr>
 
           <tr>
