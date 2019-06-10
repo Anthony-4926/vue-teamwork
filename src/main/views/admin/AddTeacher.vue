@@ -23,6 +23,12 @@
 
         <table>
           <tr>
+            <th>工号</th>
+            <td>
+              <input type="text" v-model="teacher.number" />
+            </td>
+          </tr>
+          <tr>
             <th>姓名</th>
             <td>
               <input type="text" v-model="teacher.name" />
@@ -66,6 +72,7 @@ export default {
     return {
       block: "none",
       teacher: {
+        number: null,
         name: null,
         title: null,
         phoneNumber: null,

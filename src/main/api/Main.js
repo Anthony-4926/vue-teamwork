@@ -10,8 +10,7 @@ export function getUserInfor() {
   // });
 
   axios.get("/teachers/getInfor").then(response => {
-    // console.log(response);
-
+    console.log(response.data.user);
     bus.$emit(bus.user, response.data.user);
   });
 }
@@ -76,13 +75,13 @@ export function updateInvigilation(invigilation) {
  * 获取所有教师
  */
 export function listTeachers() {
-  axios.get(`/test/test.json`).then(response => {
-    bus.$emit(bus.allTeachers, response.data.teachers);
-  });
-
-  // axios.get(`/teachers/listTeachers`).then(response => {
+  // axios.get(`/test/test.json`).then(response => {
   //   bus.$emit(bus.allTeachers, response.data.teachers);
   // });
+
+  axios.get(`/admin/listTeachers`).then(response => {
+    bus.$emit(bus.allTeachers, response.data.teachers);
+  });
 }
 
 /**
@@ -98,7 +97,7 @@ export function deleteTeacher(tid) {
  * @param {老师实体} teacher
  */
 export function addTeacher(teacher) {
-  axios.post(`teachers/addTeacher`, teacher).then(response => {
+  axios.post(`admin/add`, teacher).then(response => {
     bus.$emit(bus.allTeachers, response.data.teachers);
   });
 }
