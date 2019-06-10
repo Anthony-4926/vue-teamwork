@@ -14,15 +14,7 @@ export default {
   },
   data() {
     return {
-      myAssigments: [
-        {
-          begintime: null,
-          endtime: null,
-          place: null,
-          statement: null,
-          feedback: null
-        }
-      ],
+      myAssigments: null,
       teacherSelf: { teacherSelf: "true" }
     };
   },

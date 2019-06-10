@@ -23,11 +23,11 @@
           </tr>
           <tr>
             <th>地点</th>
-            <td>{{ assigment.invigilation.classroom }}</td>
+            <td>{{ assigment.exam.classroom }}</td>
           </tr>
           <tr>
             <th>完成情况</th>
-            <td>{{ assigment.invigilation.state }}</td>
+            <td>{{ assigment.state }}</td>
           </tr>
           <tr>
             <th>回复</th>

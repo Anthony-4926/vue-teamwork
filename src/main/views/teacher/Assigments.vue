@@ -18,20 +18,20 @@
           <!-- 开始时间 -->
           <td>{{ a.exam.startTime }}</td>
           <!-- 结束时间 -->
-          <td>{{ a.exam.endTime }}</td>
+          <td>{{ a.exam.overTime }}</td>
           <!-- 地点 -->
           <td>{{ a.exam.classroom }}</td>
           <!-- 完成情况 -->
-          <td>{{ a.invigilation.state }}</td>
+          <td>{{ a.state }}</td>
           <!-- 结束时间 -->
           <!-- 回复 -->
           <td
             v-if="a.overtime == 'true' && teacherSelf.teacherSelf == 'true'"
             style="color:red;"
           >
-            {{ a.feedback }}
+            {{ a.feedBackMessage }}
           </td>
-          <td v-else>{{ a.feedback }}</td>
+          <td v-else>{{ a.feedBackMessage }}</td>
           <td>
             <detailButton
               v-bind:assigment="a"

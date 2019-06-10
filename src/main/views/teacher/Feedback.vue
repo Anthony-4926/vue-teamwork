@@ -5,25 +5,28 @@
       <!-- 没有点击回复按钮时 -->
       <template v-if="this.feedbackButtonText == '回复'">
         <template v-if="assigment.overtime == 'true'">
-          <span style="color:red;">{{ assigment.invigilation.feedback }}</span>
+          <span style="color:red;">{{ assigment.feedBackMessage }}</span>
         </template>
         <!-- 点了回复按钮 -->
-        <template v-else>{{ assigment.invigilation.feedback }}</template>
+        <template v-else>{{ assigment.feedBackMessage }}</template>
       </template>
       <template v-else>
         <input
           type="text"
           maxlength="10"
           placeholder="1-10字"
-          v-model="assigment.feedback"
+          v-model="assigment.feedbackMessage"
         />
       </template>
       <span v-if="(this.Iid = assigment.id)" hidden></span>
-      <span v-if="(this.feedbackMessage = assigment.feedback)" hidden></span>
+      <span
+        v-if="(this.feedbackMessage = assigment.feedBackMessage)"
+        hidden
+      ></span>
       <button type="button" @click="confirm">{{ feedbackButtonText }}</button>
     </template>
     <!-- 不是老师本人的任务只可以看 -->
-    <template v-else>{{ assigment.feedback }}</template>
+    <template v-else>{{ assigment.feedbackMessage }}</template>
   </div>
 </template>
 
