@@ -1,65 +1,15 @@
 {
   "myInvigilations": [{
-      "id": "10",
-      "course": "计算机",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "id=1",
-      "feedback": "未回复，请在考试当天",
-      "overtime": "true"
+    "exam": {
+      "name": "计算机1",
+      "startTime": "2019-06-04 03:02",
+      "overTime": "2019-06-04 03:02",
+      "classroom": "丹青909"
     },
-    {
-      "id": "2",
-      "course": "java程序设计",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "id": "1",
-      "course": "数据库",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "false"
-    },
-    {
-      "id": "1",
-      "course": "算法",
-      "begintime": "2019-06-04 03:02",
-      "endtime": "2019-06-04 03:02",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    },
-    {
-      "id": "1",
-      "course": "计算机组成",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "false"
-    },
-    {
-      "id": "1",
-      "course": "操作系统",
-      "begintime": "2019年5月29日13:56:49",
-      "endtime": "2019年5月29日13:57:12",
-      "place": "丹青909",
-      "statement": "未完成",
-      "feedback": "未回复",
-      "overtime": "true"
-    }
-  ],
+    "state": "id=1",
+    "feedBackMessage": "未回复，请在考试当天",
+    "isOvertime": "true"
+  }],
   "allInvigilations": [{
     "id": "10",
     "exam": {

@@ -19,7 +19,7 @@
           </tr>
           <tr>
             <th>结束时间</th>
-            <td>{{ assigment.exam.endTime }}</td>
+            <td>{{ assigment.exam.overTime }}</td>
           </tr>
           <tr>
             <th>地点</th>

@@ -7,27 +7,19 @@
 
 <script>
 import bus from "@/util/Bus";
-import { listAllAssigments } from "@/main/api/Main";
+import { listAllAssigmentsByTeacher } from "@/main/api/Main";
 export default {
   components: {
     assigments: () => import("./Assigments")
   },
   data() {
     return {
-      allAssigments: [
-        {
-          begintime: null,
-          endtime: null,
-          place: null,
-          statement: null,
-          feedback: null
-        }
-      ],
-      teacherSelf: { teacherSelf: "false" }
+      allAssigments: null,
+      teacherSelf: false
     };
   },
   created() {
-    listAllAssigments();
+    listAllAssigmentsByTeacher();
     bus.$on(bus.allAssigments, data => {
       this.allAssigments = data;
     });

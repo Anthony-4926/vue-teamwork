@@ -37,7 +37,7 @@
 
 <script>
 import bus from "@/util/Bus";
-import { listAllAssigments } from "@/main/api/Main";
+import { listAllAssigmentsByAdmin } from "@/main/api/Main";
 
 export default {
   components: {
@@ -66,7 +66,7 @@ export default {
   },
   created() {
     console.log("invigilations.vue");
-    listAllAssigments();
+    listAllAssigmentsByAdmin();
     bus.$on(bus.allAssigments, data => {
       this.invigilations = data;
       console.log("invigilations.vue created");

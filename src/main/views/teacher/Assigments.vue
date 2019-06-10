@@ -26,7 +26,7 @@
           <!-- 结束时间 -->
           <!-- 回复 -->
           <td
-            v-if="a.isOvertime == 'true' && teacherSelf.teacherSelf == 'true'"
+            v-if="a.overtime == true && teacherSelf == true"
             style="color:red;"
           >
             {{ a.feedBackMessage }}

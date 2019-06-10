@@ -29,9 +29,19 @@ export function updateUserInfor(user) {
 }
 
 /**
- * 获取所有监考任务
+ * 管理员获取所有监考任务
  */
-export function listAllAssigments() {
+export function listAllAssigmentsByAdmin() {
+  axios.get(`/admin/invigilations`).then(response => {
+    bus.$emit(bus.allAssigments, response.data.invigilations);
+    console.log(response.data.invigilations);
+  });
+}
+
+/**
+ * 教师获取所有监考任务
+ */
+export function listAllAssigmentsByTeacher() {
   axios.get(`/teachers/invigilations`).then(response => {
     bus.$emit(bus.allAssigments, response.data.invigilations);
     console.log(response.data.invigilations);
@@ -42,10 +52,9 @@ export function listAllAssigments() {
  * 获取老师个人监考任务
  */
 export function listMyAssigments() {
-  // let headers = { authorization: sessionStorage.getItem("Authorization") };
   axios.get(`/teachers/personal/invigilations`).then(response => {
-    bus.$emit(bus.allAssigments, response.data.personalInvigilations);
     console.log(response.data.personalInvigilations);
+    bus.$emit(bus.assigments, response.data.personalInvigilations);
   });
 }
 

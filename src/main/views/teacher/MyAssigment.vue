@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       myAssigments: null,
-      teacherSelf: { teacherSelf: "true" }
+      teacherSelf: true
     };
   },
   created() {
