@@ -89,7 +89,12 @@ export default {
       block: "none",
       invigilation: {
         exam: { name: null, startTime: null, overTime: null, classroom: null },
-        teachers: []
+        teachers: [],
+        invigilation: {
+          state: "未完成",
+          isOverTime: false,
+          feedBackMessage: "请于考试一小时前回复"
+        }
       },
       addTeacher: false,
       teacherButtonText: null
