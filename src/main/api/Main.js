@@ -21,11 +21,16 @@ export function getUserInfor() {
  */
 export function updateUserInfor(user) {
   console.log(user);
-  axios.post(`teachers/update`, user).then(response => {
-    setTimeout(() => {
-      bus.$emit(bus.user, response.data.user);
-    }, 1000);
-  });
+  axios.post(`teachers/update`, user);
+}
+
+/**
+ * 更新教师信息
+ * @param {*} user
+ */
+export function updateUserInforByAdmin(user) {
+  console.log(user);
+  axios.post(`admin/update`, user);
 }
 
 /**

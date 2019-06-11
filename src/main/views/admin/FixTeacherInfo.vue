@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { updateUserInfor } from "@/main/api/Main";
+import { updateUserInforByAdmin } from "@/main/api/Main";
 export default {
   props: ["teacher"],
   data() {
@@ -66,7 +66,7 @@ export default {
       this.block = "none";
     },
     confirm() {
-      updateUserInfor(this.theacher);
+      updateUserInforByAdmin(this.teacher);
     }
   }
 };
