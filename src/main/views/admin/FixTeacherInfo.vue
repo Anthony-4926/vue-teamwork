@@ -67,6 +67,7 @@ export default {
     },
     confirm() {
       updateUserInforByAdmin(this.teacher);
+      this.block = "none";
     }
   }
 };

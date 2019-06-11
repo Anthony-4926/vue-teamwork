@@ -83,11 +83,7 @@ export function feedback(invigilation) {
 export function updateInvigilation(invigilation) {
   console.log(invigilation);
 
-  // axios
-  //   .post(`Invigilations/${invigilation.id}`, invigilation)
-  //   .then(response => {
-  //     bus.$emit(bus.allAssigments, response.data.allInvigilations);
-  //   });
+  axios.post(`admin/update/invigilation`, invigilation);
 }
 
 /**
