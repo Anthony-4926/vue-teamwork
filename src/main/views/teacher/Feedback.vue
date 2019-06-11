@@ -18,11 +18,7 @@
           v-model="assigment.feedBackMessage"
         />
       </template>
-      <span v-if="(this.Iid = assigment.id)" hidden></span>
-      <span
-        v-if="(this.feedbackMessage = assigment.feedBackMessage)"
-        hidden
-      ></span>
+
       <button type="button" @click="confirm">{{ feedbackButtonText }}</button>
     </template>
     <!-- 不是老师本人的任务只可以看 -->
@@ -35,15 +31,12 @@ import { feedback } from "@/main/api/Main";
 export default {
   props: ["assigment", "teacherSelf"],
   data: () => ({
-    feedbackButtonText: "回复",
-    // 监考ID
-    Iid: null,
-    feedBackMessage: null
+    feedbackButtonText: "回复"
   }),
   methods: {
     confirm() {
       if (this.feedbackButtonText == "确认") {
-        feedback(this.aid, this.feedbackMessage);
+        feedback(this.assigment);
       }
       this.feedbackButtonText =
         this.feedbackButtonText == "回复" ? "确认" : "回复";

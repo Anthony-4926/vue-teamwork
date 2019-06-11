@@ -73,7 +73,6 @@ export default {
   created() {
     console.log("fixMyInf");
     getUserInfor();
-    // 需要把teacher改为user
     bus.$on(bus.user, data => {
       this.user = data;
     });

@@ -63,14 +63,18 @@ export function listMyAssigments() {
  * @param {监考任务id} aid
  * @param {回复信息} message
  */
-export function feedback(Iid, message) {
-  console.log(Iid);
-  console.log(message);
-  // axios.post(`Invigilations/${Iid}/message`, message).then(response => {
+export function feedback(invigilation) {
+  // console.log(invigilation);
+  updateInvigilation(invigilation);
+  // axios.post(`Invigilations/${invigilation.id}/message`, invigilation.message).then(response => {
   //   bus.$emit(bus.assigments, response.data.myAssigments);
   // });
 }
 
+/**
+ * 修改监考记录
+ * @param {监考记录} invigilation
+ */
 export function updateInvigilation(invigilation) {
   console.log(invigilation);
 
