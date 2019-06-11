@@ -20,7 +20,7 @@
               {{ t.name }}
             </td>
           </label>
-          <td>{{ t.frequence }}</td>
+          <td>{{ t.frequency }}</td>
         </tr>
       </tbody>
     </table>

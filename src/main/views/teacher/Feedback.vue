@@ -19,7 +19,9 @@
         />
       </template>
 
-      <button type="button" @click="confirm">{{ feedbackButtonText }}</button>
+      <button type="button" @click="confirm" v-bind:disabled="isAccomplish">
+        {{ feedbackButtonText }}
+      </button>
     </template>
     <!-- 不是老师本人的任务只可以看 -->
     <template v-else>{{ assigment.feedBackMessage }}</template>
@@ -31,7 +33,8 @@ import { feedback } from "@/main/api/Main";
 export default {
   props: ["assigment", "teacherSelf"],
   data: () => ({
-    feedbackButtonText: "回复"
+    feedbackButtonText: "回复",
+    isAccomplish: false
   }),
   methods: {
     confirm() {
@@ -41,6 +44,11 @@ export default {
       this.feedbackButtonText =
         this.feedbackButtonText == "回复" ? "确认" : "回复";
     }
+  },
+
+  beforeMount() {
+    this.isAccomplish = this.assigment.state == "已完成";
+    console.log(this.isAccomplish);
   }
 };
 </script>

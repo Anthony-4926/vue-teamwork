@@ -49,6 +49,7 @@ export default {
       invigilations: [
         {
           exam: {
+            id: null,
             name: null,
             startTime: null,
             overTime: null,

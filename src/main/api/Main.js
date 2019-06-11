@@ -77,16 +77,6 @@ export function feedback(invigilation) {
 }
 
 /**
- * 修改监考记录
- * @param {监考记录} invigilation
- */
-export function updateInvigilation(invigilation) {
-  console.log(invigilation);
-
-  axios.post(`admin/update/invigilation`, invigilation);
-}
-
-/**
  * 获取所有教师
  */
 export function listTeachers() {
@@ -113,6 +103,15 @@ export function setAdmin(t) {
  */
 export function addTeacher(teacher) {
   axios.post(`admin/add`, teacher);
+}
+
+/**
+ * 修改监考记录
+ * @param {监考记录} invigilation
+ */
+export function updateInvigilation(invigilation) {
+  console.log(invigilation);
+  axios.post(`admin/update/invigilation`, invigilation);
 }
 
 /**

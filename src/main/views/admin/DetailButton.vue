@@ -135,12 +135,16 @@ export default {
   },
   created() {
     this.teacherButtonText = "修改教师";
-    this.changeable = this.assigment.statement == "已完成";
+    // 如果任务已完成，将不能再修改信息
   },
   computed: {
     formatDate() {
       return date => (date == null ? null : date.replace("T", " "));
     }
+  },
+  beforemounted() {
+    this.changeable = this.assigment.invigilation.state == "已完成";
+    console.log(this.changeable);
   }
 };
 </script>
