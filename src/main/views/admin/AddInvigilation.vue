@@ -119,15 +119,7 @@ export default {
         " "
       );
 
-      this.invigilation = addInvigilation(this.invigilation);
-      console.log(this.invigilation);
-      // this.$set(
-      //   this.invigilations,
-      //   this.invigilations.length,
-      //   this.invigilation
-      // );
-
-      // console.log(this.invigilation);
+      addInvigilation(this.invigilation);
       this.block = "none";
     },
     changeTeacher() {
@@ -142,7 +134,7 @@ export default {
   created() {
     bus.$on(bus.newInvigilation, data => {
       console.log(data);
-      this.$set(this.newInvigilations, this.newInvigilations.length, data);
+      this.$set(this.newInvigilations, this.invigilations.length, data);
     });
   },
   beforeDestroy() {
