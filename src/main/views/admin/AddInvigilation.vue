@@ -117,11 +117,7 @@ export default {
         "T",
         " "
       );
-      this.$set(
-        this.invigilations,
-        this.invigilations.length,
-        this.invigilation
-      );
+
       this.invigilation = addInvigilation(this.invigilation);
       this.$set(
         this.invigilations,
