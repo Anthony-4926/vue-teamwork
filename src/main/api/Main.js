@@ -105,7 +105,7 @@ export function setAdmin(t) {
  */
 export function addTeacher(teacher) {
   axios.post(`admin/add`, teacher).then(response => {
-    return response;
+    return response.data.newTeacher;
   });
 }
 
@@ -116,8 +116,8 @@ export function addTeacher(teacher) {
 export function updateInvigilation(invigilation) {
   // console.log(invigilation);
   axios.post(`admin/update/invigilation`, invigilation).then(response => {
-    if (response.data.invigilation.conflict.conflictMessage != null) {
-      alert(`${response.data.invigilation.conflict.conflictMessage}，但允许`);
+    if (response.data.invigilation.conflictMessage != "") {
+      alert(`${response.data.invigilation.conflictMessage}，但允许`);
     }
   });
 }
@@ -128,8 +128,9 @@ export function updateInvigilation(invigilation) {
  */
 export function addInvigilation(invigilation) {
   axios.post(`admin/add/invigilation`, invigilation).then(response => {
-    if (response.data.invigilation.conflict.conflictMessage != null) {
-      alert(`${response.data.invigilation.conflict.conflictMessage}，但允许`);
+    if (response.data.invigilation.conflictMessage != "") {
+      alert(`${response.data.invigilation.conflictMessage}，但允许`);
+      return bus.newInvigilation, response.data.invigilation.invigilation;
     }
   });
 }
