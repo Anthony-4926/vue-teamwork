@@ -90,8 +90,9 @@ export default {
       this.block = "none";
     },
     confirm() {
-      addTeacher(this.teacher);
+      this.teacher = addTeacher(this.teacher);
       this.$set(this.allTeachers, this.allTeachers.length, this.teacher);
+      // console(this.teacher);
       this.block = "none";
     }
   }

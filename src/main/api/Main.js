@@ -73,7 +73,7 @@ export function feedback(invigilation) {
   // updateInvigilation(invigilation);
   axios.post(
     `teachers/invigilation/${invigilation.id}/feedBackMessage`,
-    invigilation.message
+    invigilation
   );
 }
 
@@ -104,7 +104,9 @@ export function setAdmin(t) {
  * @param {老师实体} teacher
  */
 export function addTeacher(teacher) {
-  axios.post(`admin/add`, teacher);
+  axios.post(`admin/add`, teacher).then(response => {
+    return response;
+  });
 }
 
 /**
@@ -114,7 +116,9 @@ export function addTeacher(teacher) {
 export function updateInvigilation(invigilation) {
   // console.log(invigilation);
   axios.post(`admin/update/invigilation`, invigilation).then(response => {
-    alert("老师监考时间冲突，但是允许");
+    if (response.isConflict != null) {
+      alert(`${response.isConflict}，但允许`);
+    }
   });
 }
 
@@ -124,6 +128,8 @@ export function updateInvigilation(invigilation) {
  */
 export function addInvigilation(invigilation) {
   axios.post(`admin/add/invigilation`, invigilation).then(response => {
-    alert("老师监考时间冲突，但是允许");
+    if (response.isConflict != null) {
+      alert(`${response.isConflict}，但允许`);
+    }
   });
 }

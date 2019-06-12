@@ -121,6 +121,14 @@ export default {
       this.confirmDisable = true;
       this.addTeacher = false;
       this.teacherButtonText = "修改教师";
+      this.assigment.exam.startTime = this.assigment.exam.startTime.replace(
+        "T",
+        " "
+      );
+      this.assigment.exam.overTime = this.assigment.exam.overTime.replace(
+        "T",
+        " "
+      );
       updateInvigilation(this.assigment);
     },
     changeTeacher() {
