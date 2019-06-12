@@ -86,6 +86,7 @@ export function listTeachers() {
 
   axios.get(`/admin/listTeachers`).then(response => {
     bus.$emit(bus.allTeachers, response.data.teachers);
+    console.log("listTeacher");
   });
 }
 

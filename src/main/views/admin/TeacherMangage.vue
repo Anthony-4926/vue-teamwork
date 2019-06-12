@@ -31,7 +31,7 @@
                   取消管理员
                 </button>
               </div>
-              <fixTeacherInfo v-bind:teacher="t" v-bind:fresh="fresh" />
+              <fixTeacherInfo v-bind:teacher="t" />
             </div>
           </td>
         </tr>
@@ -54,8 +54,7 @@ export default {
   data() {
     return {
       allTeachers: null,
-      role: null,
-      fresh: false
+      role: null
     };
   },
   created() {
@@ -63,9 +62,8 @@ export default {
     bus.$on(bus.allTeachers, data => {
       this.allTeachers = data;
     });
-
     this.role = sessionStorage.getItem("role");
-    console.log(this.role);
+    // console.log(this.role);
   },
   beforeDestroy() {
     bus.$off(bus.teachers);
@@ -74,11 +72,6 @@ export default {
     manageAdmin(t) {
       setAdmin(t);
       t.authority = t.authority == 1 ? 2 : 1;
-    }
-  },
-  updated() {
-    if (this.fresh == true) {
-      listTeachers();
     }
   }
 };

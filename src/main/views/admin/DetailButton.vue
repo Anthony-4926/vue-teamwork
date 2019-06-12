@@ -101,7 +101,7 @@ export default {
       addTeacher: false,
 
       teacherButtonText: null,
-      changeable: true
+      changeable: false
     };
   },
   methods: {
