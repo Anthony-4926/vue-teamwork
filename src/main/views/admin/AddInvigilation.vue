@@ -79,6 +79,7 @@
 
 <script>
 import { addInvigilation } from "@/main/api/Main";
+import bus from "@/util/Bus";
 export default {
   props: ["invigilations"],
   components: {
@@ -89,7 +90,7 @@ export default {
       block: "none",
       invigilation: {
         exam: { name: null, startTime: null, overTime: null, classroom: null },
-        teachers: [{ number: null, name: null }],
+        teachers: [],
         invigilation: {
           state: "未完成",
           isOverTime: false,
@@ -127,7 +128,7 @@ export default {
       // );
 
       // console.log(this.invigilation);
-      // this.block = "none";
+      this.block = "none";
     },
     changeTeacher() {
       this.addTeacher = !this.addTeacher;
@@ -137,6 +138,15 @@ export default {
         this.teacherButtonText = "修改教师";
       }
     }
+  },
+  created() {
+    bus.$on(bus.newInvigilation, data => {
+      console.log(data);
+      this.$set(this.newInvigilations, this.newInvigilations.length, data);
+    });
+  },
+  beforeDestroy() {
+    bus.$off(bus.newInvigilation);
   }
 };
 </script>

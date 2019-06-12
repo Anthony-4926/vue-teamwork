@@ -134,7 +134,7 @@ export function addInvigilation(invigilation) {
   axios.post(`admin/add/invigilation`, invigilation).then(response => {
     if (response.data.invigilation.conflictMessage != "") {
       alert(`${response.data.invigilation.conflictMessage}，但允许`);
-      return bus.newInvigilation, response.data.invigilation.invigilation;
     }
+    bus.$emit(bus.newInvigilation, response.data.invigilation.invigilation);
   });
 }

@@ -95,7 +95,7 @@ export default {
       addTeacher(this.teacher);
 
       // console(this.teacher);
-      // this.block = "none";
+      this.block = "none";
     }
   },
   created() {

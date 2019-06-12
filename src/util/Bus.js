@@ -11,6 +11,7 @@ export default new Vue({
     teacherSelf: "false",
     assigmentOvertime: "false",
     allTeachers: "allTeachers",
-    newTeacher: "newTeacher"
+    newTeacher: "newTeacher",
+    newInvigilation: "newInvigilation"
   })
 });
