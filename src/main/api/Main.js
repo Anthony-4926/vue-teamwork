@@ -105,7 +105,11 @@ export function setAdmin(t) {
  */
 export function addTeacher(teacher) {
   axios.post(`admin/add`, teacher).then(response => {
-    return response.data.newTeacher;
+    // console.log(response.data);
+
+    bus.$emit(bus.newTeacher, response.data.user);
+
+    // return response.data.user;
   });
 }
 

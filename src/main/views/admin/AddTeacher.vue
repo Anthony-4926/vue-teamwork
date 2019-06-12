@@ -67,6 +67,7 @@
 
 <script>
 import { addTeacher } from "@/main/api/Main";
+import bus from "@/util/Bus";
 export default {
   props: ["allTeachers"],
   data() {
@@ -90,11 +91,21 @@ export default {
       this.block = "none";
     },
     confirm() {
-      this.teacher = addTeacher(this.teacher);
-      this.$set(this.allTeachers, this.allTeachers.length, this.teacher);
+      // this.teacher =
+      addTeacher(this.teacher);
+
       // console(this.teacher);
-      this.block = "none";
+      // this.block = "none";
     }
+  },
+  created() {
+    bus.$on(bus.newTeacher, data => {
+      console.log(data);
+      this.$set(this.allTeachers, this.allTeachers.length, data);
+    });
+  },
+  beforeDestroy() {
+    bus.$off(bus.newTeacher);
   }
 };
 </script>

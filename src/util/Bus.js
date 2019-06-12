@@ -10,6 +10,7 @@ export default new Vue({
     role: "teacher",
     teacherSelf: "false",
     assigmentOvertime: "false",
-    allTeachers: "allTeachers"
+    allTeachers: "allTeachers",
+    newTeacher: "newTeacher"
   })
 });
