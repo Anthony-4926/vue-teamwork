@@ -10,7 +10,10 @@
           <th>地点</th>
           <th>完成情况</th>
           <th>
-            <addInvigilation v-bind:invigilations="invigilations" />
+            <addInvigilation
+              v-bind:invigilations="invigilations"
+              v-if="invigilations.length"
+            />
           </th>
         </tr>
       </thead>
@@ -27,7 +30,7 @@
           <!-- 完成情况 -->
           <td>{{ a.invigilation.state }}</td>
           <td>
-            <detailButton v-bind:assigment="a" />
+            <detailButton v-bind:assigment="a" v-if="invigilations.length" />
           </td>
         </tr>
       </tbody>
@@ -46,35 +49,19 @@ export default {
   },
   data() {
     return {
-      invigilations: [
-        {
-          exam: {
-            id: null,
-            name: null,
-            startTime: null,
-            overTime: null,
-            classroom: null
-          },
-          teachers: [],
-          invigilation: {
-            state: null,
-            isOverTime: null,
-            feedBackMessage: null
-          }
-        }
-      ]
+      invigilations: []
     };
   },
   created() {
-    console.log("invigilations.vue");
+    // console.log("invigilations.vue");
     listAllAssigmentsByAdmin();
     bus.$on(bus.allAssigments, data => {
       this.invigilations = data;
-      console.log("invigilations.vue created");
+      // console.log("invigilations.vue created");
     });
   },
   beforeDestroy() {
-    console.log("invigilations.vue beforeDestroy");
+    // console.log("invigilations.vue beforeDestroy");
     bus.$off(bus.allAssigments);
   },
   computed: {

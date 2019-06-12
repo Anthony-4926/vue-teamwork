@@ -10,7 +10,7 @@ export function getUserInfor() {
   // });
 
   axios.get("/teachers/getInfor").then(response => {
-    console.log(response.data.user);
+    // console.log(response.data.user);
     bus.$emit(bus.user, response.data.user);
   });
 }
@@ -20,7 +20,7 @@ export function getUserInfor() {
  * @param {*} user
  */
 export function updateUserInfor(user) {
-  console.log(user);
+  // console.log(user);
   axios.post(`teachers/update`, user);
 }
 
@@ -29,7 +29,7 @@ export function updateUserInfor(user) {
  * @param {*} user
  */
 export function updateUserInforByAdmin(user) {
-  console.log(user);
+  // console.log(user);
   axios.post(`admin/update`, user);
 }
 
@@ -39,7 +39,7 @@ export function updateUserInforByAdmin(user) {
 export function listAllAssigmentsByAdmin() {
   axios.get(`/admin/invigilations`).then(response => {
     bus.$emit(bus.allAssigments, response.data.invigilations);
-    console.log(response.data.invigilations);
+    // console.log(response.data.invigilations);
   });
 }
 
@@ -49,7 +49,7 @@ export function listAllAssigmentsByAdmin() {
 export function listAllAssigmentsByTeacher() {
   axios.get(`/teachers/invigilations`).then(response => {
     bus.$emit(bus.allAssigments, response.data.invigilations);
-    console.log(response.data.invigilations);
+    // console.log(response.data.invigilations);
   });
 }
 
@@ -58,7 +58,7 @@ export function listAllAssigmentsByTeacher() {
  */
 export function listMyAssigments() {
   axios.get(`/teachers/personal/invigilations`).then(response => {
-    console.log(response.data.personalInvigilations);
+    // console.log(response.data.personalInvigilations);
     bus.$emit(bus.assigments, response.data.personalInvigilations);
   });
 }
@@ -86,7 +86,7 @@ export function listTeachers() {
 
   axios.get(`/admin/listTeachers`).then(response => {
     bus.$emit(bus.allTeachers, response.data.teachers);
-    console.log("listTeacher");
+    // console.log("listTeacher");
   });
 }
 
@@ -111,7 +111,7 @@ export function addTeacher(teacher) {
  * @param {监考记录} invigilation
  */
 export function updateInvigilation(invigilation) {
-  console.log(invigilation);
+  // console.log(invigilation);
   axios.post(`admin/update/invigilation`, invigilation);
 }
 
