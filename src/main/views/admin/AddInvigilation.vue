@@ -123,8 +123,8 @@ export default {
         this.invigilation
       );
       addInvigilation(this.invigilation);
-      console.log(this.invigilation);
-      this.block = "none";
+      // console.log(this.invigilation);
+      // this.block = "none";
     },
     changeTeacher() {
       this.addTeacher = !this.addTeacher;

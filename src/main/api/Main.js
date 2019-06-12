@@ -70,10 +70,11 @@ export function listMyAssigments() {
  */
 export function feedback(invigilation) {
   // console.log(invigilation);
-  updateInvigilation(invigilation);
-  // axios.post(`Invigilations/${invigilation.id}/message`, invigilation.message).then(response => {
-  //   bus.$emit(bus.assigments, response.data.myAssigments);
-  // });
+  // updateInvigilation(invigilation);
+  axios.post(
+    `teachers/invigilation/${invigilation.id}/feedBackMessage`,
+    invigilation.message
+  );
 }
 
 /**
@@ -112,7 +113,9 @@ export function addTeacher(teacher) {
  */
 export function updateInvigilation(invigilation) {
   // console.log(invigilation);
-  axios.post(`admin/update/invigilation`, invigilation);
+  axios.post(`admin/update/invigilation`, invigilation).then(response => {
+    alert("老师监考时间冲突，但是允许");
+  });
 }
 
 /**
@@ -120,5 +123,7 @@ export function updateInvigilation(invigilation) {
  * @param {监考} invigilation
  */
 export function addInvigilation(invigilation) {
-  axios.post(`admin/add/invigilation`, invigilation);
+  axios.post(`admin/add/invigilation`, invigilation).then(response => {
+    alert("老师监考时间冲突，但是允许");
+  });
 }
