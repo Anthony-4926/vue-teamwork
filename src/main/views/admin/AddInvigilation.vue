@@ -89,7 +89,7 @@ export default {
       block: "none",
       invigilation: {
         exam: { name: null, startTime: null, overTime: null, classroom: null },
-        teachers: [],
+        teachers: [{ number: null, name: null }],
         invigilation: {
           state: "未完成",
           isOverTime: false,
@@ -119,11 +119,13 @@ export default {
       );
 
       this.invigilation = addInvigilation(this.invigilation);
-      this.$set(
-        this.invigilations,
-        this.invigilations.length,
-        this.invigilation
-      );
+      console.log(this.invigilation);
+      // this.$set(
+      //   this.invigilations,
+      //   this.invigilations.length,
+      //   this.invigilation
+      // );
+
       // console.log(this.invigilation);
       // this.block = "none";
     },
