@@ -68,6 +68,7 @@
 <script>
 import { addTeacher } from "@/main/api/Main";
 import bus from "@/util/Bus";
+import { constants } from "crypto";
 export default {
   props: ["allTeachers"],
   data() {

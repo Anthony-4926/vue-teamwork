@@ -134,7 +134,7 @@ export default {
   created() {
     bus.$on(bus.newInvigilation, data => {
       console.log(data);
-      this.$set(this.newInvigilations, this.invigilations.length, data);
+      this.$set(this.invigilations, this.invigilations.length, data);
     });
   },
   beforeDestroy() {

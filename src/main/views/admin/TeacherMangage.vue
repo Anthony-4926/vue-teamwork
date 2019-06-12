@@ -60,13 +60,14 @@ export default {
   created() {
     listTeachers();
     bus.$on(bus.allTeachers, data => {
+      console.log(data);
       this.allTeachers = data;
     });
     this.role = sessionStorage.getItem("role");
     // console.log(this.role);
   },
   beforeDestroy() {
-    bus.$off(bus.teachers);
+    bus.$off(bus.allteachers);
   },
   methods: {
     manageAdmin(t) {

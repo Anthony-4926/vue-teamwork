@@ -107,7 +107,7 @@ export function addTeacher(teacher) {
   axios.post(`admin/add`, teacher).then(response => {
     // console.log(response.data);
 
-    bus.$emit(bus.newTeacher, response.data.user);
+    bus.$emit(bus.newTeacher, response.data.newTeacher);
 
     // return response.data.user;
   });
@@ -135,6 +135,8 @@ export function addInvigilation(invigilation) {
     if (response.data.invigilation.conflictMessage != "") {
       alert(`${response.data.invigilation.conflictMessage}，但允许`);
     }
+    console.log(response.data.invigilation);
+
     bus.$emit(bus.newInvigilation, response.data.invigilation.invigilation);
   });
 }
