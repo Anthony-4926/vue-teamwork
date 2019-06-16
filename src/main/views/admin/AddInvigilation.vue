@@ -120,7 +120,7 @@ export default {
       );
 
       addInvigilation(this.invigilation);
-      this.block = "none";
+      // this.block = "none";
     },
     changeTeacher() {
       this.addTeacher = !this.addTeacher;
