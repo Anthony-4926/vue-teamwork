@@ -46,10 +46,21 @@
               />
             </td>
           </tr>
+
+          <!-- <tr>
+            <th>班级</th>
+            <td>
+              <input type="text" v-model="invigilation.clazz" />
+            </td>
+          </tr>-->
+
           <tr>
             <th>教室</th>
             <td>
-              <input type="text" v-model="invigilation.exam.classroom" />
+              <span>{{ invigilation.exam.classroom.name }}</span>
+              <button type="button" @click="changeClassroom">
+                {{ classroomButtonText }}
+              </button>
             </td>
           </tr>
 
@@ -70,8 +81,13 @@
           <button type="button" @click="confirm">确认</button>
         </div>
       </div>
+      <!-- 显示老师列表 -->
       <div id="bar" v-if="addTeacher">
         <allteachers v-bind:assigment="invigilation" />
+      </div>
+      <!-- 显示教室列表 -->
+      <div id="classroombar" v-if="addClassroom">
+        <classrooms v-bind:assigment="invigilation" />
       </div>
     </div>
   </div>
@@ -83,28 +99,38 @@ import bus from "@/util/Bus";
 export default {
   props: ["invigilations"],
   components: {
-    allteachers: () => import("./Teachers.vue")
+    allteachers: () => import("./Teachers.vue"),
+    classrooms: () => import("./Classroom.vue")
   },
   data() {
     return {
       block: "none",
       invigilation: {
-        exam: { name: null, startTime: null, overTime: null, classroom: null },
+        exam: {
+          name: null,
+          startTime: null,
+          overTime: null,
+          classroom: { name: null, id: null }
+        },
         teachers: [],
         invigilation: {
           state: "未完成",
           isOverTime: false,
-          feedBackMessage: "请于考试一小时前回复"
+          feedBackMessage: "请于考试一小时前回复",
+          clazz: ""
         }
       },
       addTeacher: false,
-      teacherButtonText: null
+      teacherButtonText: null,
+      classroomButtonText: null,
+      addClassroom: false
     };
   },
   methods: {
     open() {
       this.block = "block";
       this.teacherButtonText = "修改教师";
+      this.classroomButtonText = "修改教室";
     },
     close() {
       this.block = "none";
@@ -123,11 +149,27 @@ export default {
       this.block = "none";
     },
     changeTeacher() {
+      // 修改教室内容
+      this.addClassroom = false;
+      this.classroomButtonText = "修改教室";
+
       this.addTeacher = !this.addTeacher;
       if (this.teacherButtonText == "修改教师") {
         this.teacherButtonText = "确认";
       } else {
         this.teacherButtonText = "修改教师";
+      }
+    },
+    changeClassroom() {
+      // 修改老师内容
+      this.addTeacher = false;
+      this.teacherButtonText = "修改教师";
+
+      this.addClassroom = !this.addClassroom;
+      if (this.classroomButtonText == "修改教室") {
+        this.classroomButtonText = "确认";
+      } else {
+        this.classroomButtonText = "修改教室";
       }
     }
   },
@@ -200,6 +242,14 @@ textarea {
 }
 
 #bar {
+  z-index: 3;
+  background-color: #fff;
+  margin-top: 10vh;
+  width: 25%;
+  transform: translateX(290%);
+}
+
+#classroombar {
   z-index: 3;
   background-color: #fff;
   margin-top: 10vh;

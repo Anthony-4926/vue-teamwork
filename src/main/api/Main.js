@@ -92,6 +92,19 @@ export function listTeachers() {
 }
 
 /**
+ * 获取所有教室
+ */
+export function listClassrooms() {
+  // axios.get(`/test/test.json`).then(response => {
+  //   bus.$emit(bus.classrooms, response.data.classrooms);
+  // });
+
+  axios.get(`/admin/classrooms`).then(response => {
+    bus.$emit(bus.classrooms, response.data.classrooms);
+  });
+}
+
+/**
  * 基于id删除老师
  * @param {老师id} tid
  */
