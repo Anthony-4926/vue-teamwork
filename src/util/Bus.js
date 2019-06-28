@@ -12,6 +12,7 @@ export default new Vue({
     assigmentOvertime: "false",
     allTeachers: "allTeachers",
     newTeacher: "newTeacher",
-    newInvigilation: "newInvigilation"
+    newInvigilation: "newInvigilation",
+    course: "courses"
   })
 });

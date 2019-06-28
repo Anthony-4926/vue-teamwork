@@ -21,6 +21,9 @@
             </td>
           </label>
           <td>{{ t.frequency }}</td>
+          <td>
+            <teacherCourse v-bind:teacherCourse="t" />
+          </td>
         </tr>
       </tbody>
     </table>
@@ -29,10 +32,12 @@
 
 <script>
 import { listTeachers } from "@/main/api/Main";
-
 import bus from "@/util/Bus";
 export default {
   props: ["assigment"],
+  components: {
+    teacherCourse: () => import("./TeacherCourse.vue")
+  },
   data: () => ({
     allTeachers: null
   }),

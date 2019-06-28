@@ -92,11 +92,17 @@ export function listTeachers() {
 }
 
 /**
- * 基于id删除老师
+ *设置管理员，取消管理员
  * @param {老师id} tid
  */
 export function setAdmin(t) {
   axios.post(`superAdmin/updateAuthority`, t);
+}
+
+export function getCourses(id) {
+  axios.post(`teachers/${id}/course`).then(response => {
+    bus.$emit(bus.courses, response.data.teacherCourses);
+  });
 }
 
 /**

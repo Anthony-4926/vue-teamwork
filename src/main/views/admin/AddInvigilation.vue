@@ -108,6 +108,7 @@ export default {
     },
     close() {
       this.block = "none";
+      this.addTeacher = false;
     },
     confirm() {
       this.invigilation.exam.startTime = this.invigilation.exam.startTime.replace(
