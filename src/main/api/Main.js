@@ -101,7 +101,7 @@ export function setAdmin(t) {
 
 export function getCourses(t) {
   window.console.log(t);
-  axios.get(`teachers/course`, t).then(response => {
+  axios.get(`teachers/${t.id}/course`).then(response => {
     console.log(response.data.teacherCourses);
     bus.$emit(bus.courses, response.data.teacherCourses);
   });
