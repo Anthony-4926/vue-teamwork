@@ -55,8 +55,7 @@ export default {
         console.log("teacherCourse");
         console.log(this.courses);
       });
-
-      getCourses(this.teacher.id);
+      getCourses(this.teacher);
     },
     close() {
       this.block = "none";

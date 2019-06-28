@@ -99,9 +99,9 @@ export function setAdmin(t) {
   axios.post(`superAdmin/updateAuthority`, t);
 }
 
-export function getCourses(id) {
-  window.console.log(id);
-  axios.get(`teachers/${id}/course`).then(response => {
+export function getCourses(t) {
+  window.console.log(t);
+  axios.get(`teachers/course`, t).then(response => {
     console.log(response.data.teacherCourses);
     bus.$emit(bus.courses, response.data.teacherCourses);
   });
