@@ -13,6 +13,6 @@ export default new Vue({
     allTeachers: "allTeachers",
     newTeacher: "newTeacher",
     newInvigilation: "newInvigilation",
-    course: "courses"
+    courses: "courses"
   })
 });

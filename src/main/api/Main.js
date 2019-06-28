@@ -100,9 +100,15 @@ export function setAdmin(t) {
 }
 
 export function getCourses(id) {
-  axios.post(`teachers/${id}/course`).then(response => {
+  window.console.log(id);
+  axios.get(`teachers/${id}/course`).then(response => {
+    console.log(response.data.teacherCourses);
     bus.$emit(bus.courses, response.data.teacherCourses);
   });
+
+  // axios.post(`teachers/${id}/course`).then(response => {
+  //   bus.$emit(bus.courses, response.data.teacherCourses);
+  // });
 }
 
 /**

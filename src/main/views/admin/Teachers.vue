@@ -22,7 +22,7 @@
           </label>
           <td>{{ t.frequency }}</td>
           <td>
-            <teacherCourse v-bind:teacherCourse="t" />
+            <teacherCourse v-bind:teacher="t" />
           </td>
         </tr>
       </tbody>

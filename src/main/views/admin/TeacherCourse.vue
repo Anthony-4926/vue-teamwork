@@ -44,22 +44,26 @@ export default {
   data() {
     return {
       block: "none",
-      course: null
+      courses: [{ course: { name: null, classTime: null } }]
     };
   },
   methods: {
     open() {
       this.block = "block";
+      bus.$on(bus.courses, data => {
+        this.courses = data;
+        console.log("teacherCourse");
+        console.log(this.courses);
+      });
+
+      getCourses(this.teacher.id);
     },
     close() {
       this.block = "none";
     }
   },
   created() {
-    getCourses(this.teacher.id);
-    bus.$on(bus.courses, data => {
-      this.courses = data;
-    });
+    // console.log(this.teacher.id);
   },
   beforeDestroy() {
     bus.$off(bus.courses);
