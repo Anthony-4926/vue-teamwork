@@ -73,6 +73,7 @@ export default {
   data() {
     return {
       block: "none",
+  
       teacher: {
         number: null,
         name: null,
